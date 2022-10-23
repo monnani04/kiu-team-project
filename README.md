@@ -8,6 +8,78 @@
 
 <hr/>
 <hr/>
+
+# 세팅 방법
++ ## 프로그램 설치
+    + ### nodeJS 설치 
+    [https://nodejs.org/ko/](https://nodejs.org/ko/)
+    + ### git 설치
+        + #### `WINDOW`
+        [https://git-scm.com/download/win](https://git-scm.com/download/win)
+        + #### `MAC`
+        + 맥은 설치전 homebrew 설치[https://brew.sh/](https://brew.sh/)
+        ```
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        ```
+        [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
+    + ### vscode 설치
+    [https://code.visualstudio.com/](https://code.visualstudio.com/)
+    + ### android Studio 설치 (필요시)
+        + #### `WINDOW`
+        [https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-windows.exe](https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-windows.exe)
+        + #### `MAC INTEL`
+        [https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-mac.dmg](https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-mac.dmg)
+        + #### `MAC M1`
+        [https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-mac_arm.dmg](https://redirector.gvt1.com/edgedl/android/studio/install/2021.2.1.16/android-studio-2021.2.1.16-mac_arm.dmg)
+
+
++ ## Terminal에서
+    + ### 1. git project 가져오기
+    ```
+    git clone https://github.com/Wuyuh-sun/kiu-team-project.git
+    ```
+    + ### 2. git branch 만들기
+    #### 브랜치 명
+    우윤하 - `yunha`
+    김민정 - `minjeong`
+    손한솔 - `hansol`
+    우희진 - `heejin`
+    조대한 - `daehan`
+
+    ```
+    git branch 이름
+    ```
+    + ### 3. node modules 설치
+    ```
+    npm i
+    ```
+
++ ## 추천 Extension
+    + `Prettier`
+    + `Material Icon Theme`
+    + `Auto Rename Tag`
+
++ ## 문서구조
+    + node_modules
+    + public (정적 경로)
+        + index.html (root div)
+    + src
+        + components    (컴포넌트들 저장 경로)
+        + css   (css, css.module 저장 경로)
+        + img   (img 저장)
+        + routes    (router 저장)
+        + store     (redux state 저장)
+        + App.js    (앱 - 가장 큰 박스)
+        + index.js  (정적경로에 앱넣기)
+    + .gitignore    (git에 제외할 파일, 폴더 지정)
+    + package-lock.json
+    + package.json  (프로젝트 패키지 저장)
+    + README.md (프로젝트 설명 글)
+
+<hr/>
+<hr/>
+
+# create-react-app default README.md
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
