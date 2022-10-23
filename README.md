@@ -8,6 +8,29 @@
 
 <hr/>
 <hr/>
+
+# 세팅 방법
++ ## Terminal에서
+    + ### 1. git project 가져오기
+    ```
+    git clone https://github.com/Wuyuh-sun/kiu-team-project.git
+    ```
+    + ### 2. git branch 만들기
+    #### 브랜치 명
+    우윤하 - `yunha`
+    김민정 - `minjeong`
+    손한솔 - `hansol`
+    우희진 - `heejin`
+    조대한 - `daehan`
+
+    ```
+    git branch 이름
+    ```
+
+<hr/>
+<hr/>
+
+# create-react-app default README.md
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
