@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# 경일대 모바일 개발플랫폼(Morpheus MADP) 기반의  APP 개발 TEAM-PROJECT
+
+`팀장` - 우윤하
+`팀원` - 김민정, 손한솔, 우희진, 조대한
+
+### 주제 : `Example`
+### 프로젝트 기간 : `2022-10-19(수요일) ~ 2022-11-22(화요일)`
+
+<hr/>
+<hr/>
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
