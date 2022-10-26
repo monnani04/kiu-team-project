@@ -1,11 +1,11 @@
-# 경일대 모바일 개발플랫폼(Morpheus MADP) 기반의  APP 개발 TEAM-PROJECT
+# 경일대 모바일 개발플랫폼(Morpheus MADP) 기반의  APP 개발 TEAM-PROJECT ( LAMAH )
 
 `팀장` - 우윤하
 `팀원` - 김민정, 손한솔, 우희진, 조대한
 
-### 주제 - `Example`
+### 프로젝트 명 - `LAMAH`
+### 주제 - `숙박예약 앱`
 ### 프로젝트 기간 - `2022-10-19(수요일) ~ 2022-11-22(화요일)`
-
 
 #### 기획 - 
 #### 개념 설계 - 
@@ -13,11 +13,11 @@
 #### 백 - 
 #### 데이터베이스 설계 - 
 
-#### IDE - 
-#### Design tool - 
-#### Platform - 
-#### Language - 
-#### Framework - 
+#### IDE - `VScode, Android Studio, Morpheus, Eclipse, sts4`
+#### Design tool - `PhotoShop, Illustrator, XD, `
+#### Platform - `Android App`
+#### Language - `HTML,CSS,JavaScript,JAVA`
+#### Framework - `Morpheus, React, Spring`
 
 <hr/>
 <hr/>
