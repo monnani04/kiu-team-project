@@ -1,12 +1,15 @@
 .wrap{
     width: 60px;
-    height: 100%;
+    height: auto;
     /* background-color: gray; */
     /* margin: 0 10px 0 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+a{
+    color: black;
 }
 .button{
     width: 50px;
@@ -17,6 +20,7 @@
     text-align: center;
     line-height: 50px;
     font-size: 1.5em;
+    cursor: pointer;
 }
 .name{
     font-size: 0.1em;
