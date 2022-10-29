@@ -14,10 +14,11 @@
 #### 데이터베이스 설계 - 
 
 #### IDE - `VScode, Android Studio, Morpheus, Eclipse, sts4`
-#### Design tool - `PhotoShop, Illustrator, XD, `
+#### Design tool - `PhotoShop, Illustrator, XD`
 #### Platform - `Android App`
 #### Language - `HTML,CSS,JavaScript,JAVA`
 #### Framework - `Morpheus, React, Spring`
+#### Team Colloboration tool - `Slack, discord, mindmeister`
 
 <hr/>
 <hr/>
@@ -66,6 +67,7 @@
     ```
     npm i
     ```
+    + ### 4. 개발 시작
 
 + ## 추천 Extension
     + `Prettier`
