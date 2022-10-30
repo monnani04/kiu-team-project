@@ -1,5 +1,8 @@
 # 경일대 모바일 개발플랫폼(Morpheus MADP) 기반의  APP 개발 TEAM-PROJECT ( LAMAH )
 
+## 최종 수정 일자 - 2022-10-31 
+## 수정자 - 우윤하
+
 `팀장` - 우윤하
 `팀원` - 김민정, 손한솔, 우희진, 조대한
 
@@ -16,14 +19,15 @@
 #### IDE - `VScode, Android Studio, Morpheus, Eclipse, sts4`
 #### Design tool - `PhotoShop, Illustrator, XD`
 #### Platform - `Android App`
-#### Language - `HTML,CSS,JavaScript,JAVA`
-#### Framework - `Morpheus, React, Spring`
+#### Language - `HTML,CSS,JavaScript`
+#### Database - `MySQL`
+#### Framework, library - `Morpheus, React, Redux, nodeJs, Express`
 #### Team Colloboration tool - `Slack, discord, mindmeister`
 
 <hr/>
 <hr/>
 
-# 세팅 방법
+# 세팅 방법 ( 개발 진행 전 세팅하세요 )
 + ## 프로그램 설치
     + ### nodeJS 설치 
     [https://nodejs.org/ko/](https://nodejs.org/ko/)
@@ -63,6 +67,45 @@
     ```
     git branch 이름
     ```
+
+    github에 연결되어 있는 모든 branch를 보고자 하면
+    ```
+    git branch -a
+    ```
+
+    내 로컬에만 있는 branch를 볼려면
+    ```
+    git branch
+    ```
+
+    + ### 2_1. git checkout (중요!!! 깃 체크아웃해서 브랜치 변경 후 커밋 -> 푸쉬, main브랜치 절대 선택하지 마세요.)
+    ```
+    git checkout 이름
+    ```
+    + ### 2_2. 프로젝트 올리기 ( 개발 진행 후에 하세요 )
+    
+    1. 변경된 파일들 깃 스테이지에 올리기 (1단계)
+    ```
+    git add .
+    ```
+    2. 스테이지에 있는 파일들 저장 (2단계)
+    ```
+    git commit -m "커밋내용"
+    ```
+    `example`
+    ```
+    git commit -m "my first commit"
+    ```
+
+    3. 저장된 파일 깃허브 저장소에 업로드 (3단계)
+    ```
+    git push origin 이름(2_1에서 선택한 브랜치 이름)
+    ```
+    `example`
+    ```
+    git push origin yunha
+    ```
+
     + ### 3. node modules 설치
     ```
     npm i
@@ -78,12 +121,36 @@
     + node_modules
     + public (정적 경로)
         + index.html (root div)
+        + img (img 폴더 - public)
+        + js (Morpheus 프레임워크 폴더)
     + src
         + components    (컴포넌트들 저장 경로)
+            + Main (Main 페이지 컴포넌트)
+                + MainContent (Main 페이지 콘텐츠별 저장 폴더 [둘러보기, 위시리스트, 홈, 알림, 프로필])
+                    + MainHome.js ( 콘텐츠 홈 컴포넌트 )
+                    + MainNotice.js ( 콘텐츠 알림 컴포넌트 )
+                    + MainProfile.js ( 콘텐츠 프로필 컴포넌트 )
+                    + MainSearch.js ( 콘텐츠 둘러보기 컴포넌트 )
+                    + MainWishList.js ( 콘텐츠 위시리스트 컴포넌트 )
+                + MainContent.js (Main 페이지 콘텐츠 영역 컴포넌트)
+                + MainNav.js (Main 페이지 내비게이션 영역 컴포넌트)
+                + MainNavItem.js (Main 페이지 내비게이션 아이템박스 컴포넌트)
+            + Example.js (예시 파일)
         + css   (css, css.module 저장 경로)
-        + img   (img 저장)
+            + Main (Main 페이지 스타일링 폴더)
+                + MainContent.module.css (메인 콘텐츠 영역 스타일링 파일 - 모듈화)
+                + MainNav.module.css (메인 내비게이션 영역 스타일링 파일 - 모듈화)
+                + MainNavItem.module.css (메인 내비게이션 아이템박스 스타일링 파일 - 모듈화)
+            + App.css (앱 전체 공통 스타일링)
+        + img   (img 폴더 - src)
         + routes    (router 저장)
+            + ExmapleRoute.js (라우터 예시 파일)
+            + Main.js (Main 페이지 라우터)
         + store     (redux state 저장)
+            + modules ( redux state 모듈화 폴더 )
+                + exampleSlice.js ( redux 예시 파일 )
+                + mainNavSlice.js ( mainNav 상태 변경 - 기본값 = search )
+            + store.js ( redux module 저장소)
         + App.js    (앱 - 가장 큰 박스)
         + index.js  (정적경로에 앱넣기)
     + .gitignore    (git에 제외할 파일, 폴더 지정)
