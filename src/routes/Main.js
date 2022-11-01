@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Login from "../components/Login/Login";
 import MainContent from "../components/Main/MainContent";
 import MainNav from "../components/Main/MainNav";
 
@@ -27,6 +28,7 @@ export default function Main() {
       <MainNav />
       <Routes>
         <Route path="/*" element={<MainContent />} />
+        
       </Routes>
     </>
   );

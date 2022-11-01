@@ -8,6 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 // import { faHatCowboy } from '@fortawesome/pro-thin-svg-icons'
 import { faHatChef } from '@fortawesome/sharp-solid-svg-icons'
+import Login from "./components/Login/Login";
 
 library.add(fas, faTwitter, faFontAwesome, faHatChef)
 
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/example" element={<ExampleRoute />} />
           <Route path="/main/*" element={<Main />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
