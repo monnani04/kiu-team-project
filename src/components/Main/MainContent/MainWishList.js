@@ -1,7 +1,12 @@
-export default function MainWishList(){
-    return(
-        <>
-        <h1>MainWishList</h1>
-        </>
-    )
+import NonLogin from "./MainWishList/NonLogin";
+import style from "../../../css/Main/MainContent/MainWishList.module.css";
+
+export default function MainWishList() {
+  return (
+    <>
+      <div className={style.wrap}>
+        <NonLogin />
+      </div>
+    </>
+  );
 }
