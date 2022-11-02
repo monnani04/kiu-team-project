@@ -1,7 +1,11 @@
+import Home from "./MainHome/Home";
+
 export default function MainHome(){
     return(
         <>
-            <h1>MainHome</h1>
+        <div>
+        <Home />
+      </div>
         </>
     )
 }
