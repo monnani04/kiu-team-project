@@ -1,0 +1,34 @@
+.wrap{
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background-color: white;
+    z-index: 99997;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    transition: 0.5s ease-in-out;
+    border-radius: 50px 50px 0 0;
+    box-sizing: border-box;
+    padding-top: 220px;
+}
+.slideBtn{
+    width: 100px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 5px;
+    position: relative;
+    top: -190px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.itemWrap{
+    width: 300px;
+    height: calc(100%);
+    background-color: gainsboro;
+    overflow: hidden;
+    position: absolute;
+    /* top: 0; */
+    left: 50%;
+    transform: translateX(-50%);
+}
