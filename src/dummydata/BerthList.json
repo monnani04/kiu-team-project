@@ -1,0 +1,52 @@
+{
+    "berth1":{
+        "titleImg":"성민이 러브하우스.png",
+        "starImg": "star_yellow.png",
+        "grade": 5,
+        "name":"대구 광역시 중구",
+        "distance": "11km",
+        "date1": "10월 28일",
+        "date2": "11월 02일",
+        "price": "59999"
+    },
+    "berth2":{
+        "titleImg":"성민이 러브하우스.png",
+        "starImg": "star_yellow.png",
+        "grade": 5,
+        "name":"대구 광역시 중구",
+        "distance": "11km",
+        "date1": "10월 28일",
+        "date2": "11월 02일",
+        "price": "59999"
+    },
+    "berth3":{
+        "titleImg":"성민이 러브하우스.png",
+        "starImg": "star_yellow.png",
+        "grade": 5,
+        "name":"대구 광역시 중구",
+        "distance": "11km",
+        "date1": "10월 28일",
+        "date2": "11월 02일",
+        "price": "59999"
+    },
+    "berth4":{
+        "titleImg":"성민이 러브하우스.png",
+        "starImg": "star_yellow.png",
+        "grade": 5,
+        "name":"대구 광역시 중구",
+        "distance": "11km",
+        "date1": "10월 28일",
+        "date2": "11월 02일",
+        "price": "59999"
+    },
+    "berth5":{
+        "titleImg":"성민이 러브하우스.png",
+        "starImg": "star_yellow.png",
+        "grade": 5,
+        "name":"대구 광역시 중구",
+        "distance": "11km",
+        "date1": "10월 28일",
+        "date2": "11월 02일",
+        "price": "59999"
+    }
+}
