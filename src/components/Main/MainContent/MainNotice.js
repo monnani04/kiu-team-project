@@ -1,7 +1,9 @@
+import Notice from "./MainNotice/Notice";
+
 export default function MainNotice(){
     return(
         <>
-        <h1>MainNotice</h1>
+        <Notice />
         </>
     )
 }

@@ -16,7 +16,9 @@ export default function Home() {
         </div>
         <br />
         <div className={style.div1}>
-          <input type="button" className={style.btn1} value="로그인"></input>
+          <Link to={'/login'}>
+            <input type="button" className={style.btn1} value="로그인"></input>
+          </Link>
         </div>
       </div>
     </>
