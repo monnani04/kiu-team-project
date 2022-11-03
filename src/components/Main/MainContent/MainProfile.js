@@ -1,7 +1,10 @@
+import Profile from "./MainProfile/ProfileLogin.js";
+
+
 export default function MainProfile(){
     return(
         <>
-        <h1>MainProfile</h1>
+        <Profile/>
         </>
     )
 }
