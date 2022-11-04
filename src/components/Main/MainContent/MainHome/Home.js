@@ -1,7 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../../../../css/Main/MainContent/MainHome/Home.module.css";
 
+function LoginBtn() {
+  return (
+    <>
+      <div className={style.div1}>
+        <Link to={"/login"}>
+          <input type="button" className={style.btn1} value="로그인"></input>
+        </Link>
+      </div>
+    </>
+  );
+}
+
 export default function Home() {
+  const [auth, setAuth] = useState(1);
+
   return (
     <>
       <div className={style.wrap}>
@@ -15,11 +30,20 @@ export default function Home() {
           </Link>
         </div>
         <br />
-        <div className={style.div1}>
+        {auth === undefined ? (
+          false
+        ) : (
+          <div className={style.div1}>
+        <Link to={"/login"}>
+          <input type="button" className={style.btn1} value="로그인"></input>
+        </Link>
+      </div>
+        )}
+        {/* <div className={style.div1}>
           <Link to={'/login'}>
             <input type="button" className={style.btn1} value="로그인"></input>
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   );
