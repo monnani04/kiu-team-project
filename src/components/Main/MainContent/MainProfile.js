@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export default function MainProfile(){
-    const [auth, setAuth] = useState(false);
+    const [auth, setAuth] = useState(true);
 
     console.log(auth);
 

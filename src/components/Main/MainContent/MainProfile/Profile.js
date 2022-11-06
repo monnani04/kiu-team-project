@@ -8,16 +8,18 @@ export default function Profile() {
         <h1>프로필</h1>
 
         <div className={style.myprofile}>
-          <div>
-            <div className={style.imgback} style={{ display: "inline-block" }}>
-              <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
+          
+            <div>
+              <div className={style.imgback} style={{ display: "inline-block" }}>
+                <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
+              </div>
+              <div style={{ display: "inline-block", padding: "10px" }}>
+                라마 관리자
+                <div className={style.stitle}>프로필 보기</div>
+              </div>
             </div>
-            <div style={{ display: "inline-block", padding: "10px" }}>
-              라마 관리자
-              <div className={style.stitle}>프로필 보기</div>
-            </div>
-          </div>
-          <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+            <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+          
         </div>
 
         <h2>내 정보 관리</h2>

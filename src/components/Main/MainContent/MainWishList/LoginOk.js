@@ -8,12 +8,12 @@ export default function LoginOk(props) {
         <div className={style.div}>
           <h2 className={style.wish}>위시 리스트 </h2>
           <div className={style.list}>
-            <WishItem />
-            <WishItem />
-            <WishItem />
-            <WishItem />
-            <WishItem />
-            <WishItem />
+            <WishItem title="성민이의 러브 하우스1"/>
+            <WishItem title="성민이의 러브 하우스2"/>
+            <WishItem title="성민이의 러브 하우스3"/>
+            <WishItem title="성민이의 러브 하우스4"/>
+            <WishItem title="성민이의 러브 하우스5"/>
+            <WishItem title="성민이의 러브 하우스6"/>
           </div>
         </div>
       </div>
