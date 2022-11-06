@@ -17,12 +17,16 @@ export default function SearchMapBtn() {
   useEffect(() => {
     if (SearchMapBtnState === false) {
       // console.log(false);
+      wrapRef.current.style.display="flex"
+      setTimeout(()=>{
+        wrapRef.current.style.opacity=1;
+      },100)
+      
     } else {
       wrapRef.current.style.opacity=0;
       setTimeout(()=>{
         wrapRef.current.style.display="none"
       },500)
-      
     }
   }, [SearchMapBtnState]);
 
