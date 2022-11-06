@@ -9,8 +9,11 @@ import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 // import { faHatCowboy } from '@fortawesome/pro-thin-svg-icons'
 import { faHatChef } from '@fortawesome/sharp-solid-svg-icons'
 import Login from "./components/Login/Login";
+import Test from "./routes/Test";
 
-library.add(fas, faTwitter, faFontAwesome, faHatChef)
+library.add(fas, faTwitter, faFontAwesome, faHatChef);
+
+import "swiper/css/bundle";
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/example" element={<ExampleRoute />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/main/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
         </Routes>
