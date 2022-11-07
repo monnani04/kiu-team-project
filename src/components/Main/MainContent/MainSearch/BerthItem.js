@@ -28,9 +28,37 @@ export default function BerthItem(props) {
   useEffect(() => {}, []);
   return (
     <>
-      <div className={style.wrap} onClick={() => {
-        
-      }}>
+      <div
+        className={style.wrap}
+        onClick={() => {
+          navigate("/viewDetailBerth", {
+            state: {
+              id: berthList.data[props.idx].id,
+              titleImg: berthList.data[props.idx].titleImg,
+              starImg: berthList.data[props.idx].starImg,
+              grade: berthList.data[props.idx].grade,
+              name: berthList.data[props.idx].name,
+              name2: berthList.data[props.idx].name2,
+              date1: berthList.data[props.idx].date1,
+              date2: berthList.data[props.idx].date2,
+              price: berthList.data[props.idx].price,
+              category: berthList.data[props.idx].category,
+              addr_num: berthList.data[props.idx].addr_num,
+              addr_street: berthList.data[props.idx].addr_street,
+              addr_lot: berthList.data[props.idx].addr_lot,
+              addr_detail: berthList.data[props.idx].addr_detail,
+              max_people: berthList.data[props.idx].max_people,
+              bedroom: berthList.data[props.idx].bedroom,
+              bed: berthList.data[props.idx].bed,
+              bathroom: berthList.data[props.idx].bathroom,
+              facilities: berthList.data[props.idx].facilities,
+              rules: berthList.data[props.idx].rules,
+              lng: berthList.data[props.idx].lng,
+              lat: berthList.data[props.idx].lat,
+            },
+          });
+        }}
+      >
         <div
           className={style.wishBtn}
           onClick={(e) => {
