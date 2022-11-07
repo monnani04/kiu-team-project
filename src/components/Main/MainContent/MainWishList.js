@@ -4,13 +4,14 @@ import { useState } from "react";
 import LoginOk from "./MainWishList/LoginOk";
 
 export default function MainWishList() {
-const [auth, setAuth] = useState(1);
-console.log(auth)
+  const [auth, setAuth] = useState(1);
+  console.log(auth);
 
   return (
     <>
       <div className={style.wrap}>
-        {auth === undefined ? <NonLogin /> : <LoginOk/>}        
+        {auth === undefined ? <NonLogin /> : <LoginOk/>}
+        
         
       </div>
     </>
