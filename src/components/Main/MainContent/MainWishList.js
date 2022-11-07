@@ -10,8 +10,7 @@ export default function MainWishList() {
   return (
     <>
       <div className={style.wrap}>
-        {auth === undefined ? <NonLogin /> : <LoginOk/>}
-        
+        {auth === undefined ? <NonLogin /> : <LoginOk/>}      
         
       </div>
     </>
