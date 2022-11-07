@@ -14,6 +14,7 @@ import Login from "./components/Login/Login";
 library.add(fas, faTwitter, faFontAwesome, faHatChef);
 
 import "swiper/css/bundle";
+import ViewDetailBerth from "./routes/ViewDetailBerth";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/example" element={<ExampleRoute />} />
           <Route path="/main/*" element={<Main />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/viewdetailberth" element={<ViewDetailBerth/>} />
         </Routes>
       </BrowserRouter>
     </>
