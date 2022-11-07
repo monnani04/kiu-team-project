@@ -30,7 +30,7 @@ export default function Home() {
           </Link>
         </div>
         <br />
-        {auth === undefined ? (
+        {auth != undefined ? (
           false
         ) : (
           <div className={style.div1}>

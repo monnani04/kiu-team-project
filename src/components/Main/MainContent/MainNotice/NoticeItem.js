@@ -1,42 +1,79 @@
+import { height } from "@mui/system";
+import "./ni.css";
+
 export default function NoticeItem(props) {
-    return (
-      <>
-        <div
+  return (
+    <>
+      <div
         style={{
-          width: "400px",
-          height: "180px",
+          width: "370px",
+          height: "65px",
           backgroundColor: "white",
-          margin: "7px",
-          borderRadius: "15px",
+          marginBottom: "12px",
+          borderRadius: "20px",
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
+          top: "10%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          padding:"0 10px 0 20px",
+          boxSizing:"border-box"
         }}
       >
-        <div style={{
-            position: "relative",
-            left: "50%",
-            top: "62px",
-            transform: "translate(-50%, -50%)",
-            width: "140px",
-            height: "105px",
-            
-        }}>           
-        </div>
-      
-        <p style={{
-            position: "relative",
-            fontSize: "13px",
-            left: "14px",
-            top: "25px"
-        }}>{props.notice}</p>
-          <p style={{
+        <div
+          style={{
+            width: "320px",
+            display:"flex",
+            flexDirection:"column"
+          }}
+        >
+          <button style={{
+              width: "15px",
+              height: "20px",
+              position: "absolute",
+              left: "0",
+              top: "0",
+              border: "none",
+              borderRadius: "20px",
+          }}>
+            x
+          </button>
+
+          <p
+            style={{
               position: "relative",
               fontSize: "13px",
-              left: "15px",
-              top: "19px",
-              fontSize: "12px"
-        }}>대구광역시 - 중구 </p>
+            }}
+          >
+            {props.notice}
+          </p>
+          <p
+            style={{
+              position: "relative",
+              fontSize: "13px",
+              top: "0",
+              fontSize: "12px",
+            }}
+          >
+            대구광역시 - 중구 - 성민이의 러브 하우스 - 2022-10-28
+          </p>
+        </div>
 
+        <div
+          style={{
+            position: "relative",
+            // left: "89%",
+            left: "0",
+            width: "60px",
+            height: "50px",
+          }}
+        >
+          <div className="sungminImg"></div>
+        </div>
       </div>
-      </>
-    );
-  }
+    </>
+  );
+}
