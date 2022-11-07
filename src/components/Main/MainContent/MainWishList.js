@@ -11,8 +11,6 @@ export default function MainWishList() {
     <>
       <div className={style.wrap}>
         {auth === undefined ? <NonLogin /> : <LoginOk/>}
-        
-        
       </div>
     </>
   );
