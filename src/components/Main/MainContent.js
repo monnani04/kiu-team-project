@@ -7,6 +7,9 @@ import MainProfile from "./MainContent/MainProfile";
 import style from "../../css/Main/MainContent.module.css";
 
 export default function MainContent(){
+
+    
+
     return(
         <>
         <div className={style.wrap}>
