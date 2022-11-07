@@ -8,9 +8,9 @@ export default function MainSearch() {
     <>
       <div className={style.wrap}>
         <SearchLinkBox />
-        <SearchMap/>
-        <SearchBearthList/>
-        <SearchMapBtn/>
+        <SearchMap />
+        <SearchBearthList />
+        <SearchMapBtn />
       </div>
     </>
   );
