@@ -50,6 +50,8 @@
 .wrap h2{
     font-size : medium;
     padding-top : 30px;
+    width : 350px;
+    margin-left : 0
     /* padding-bottom : 10px; */
 }
 

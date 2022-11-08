@@ -1,5 +1,6 @@
 import style from "../css/Main/MainContent/MainProfile/MyProfile.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProfileSwiper from "../components/Main/MainContent/MainProfile/ProfileSwiper";
 
 export default function MyProfile() {
   return (
@@ -30,6 +31,8 @@ export default function MyProfile() {
         <h2>안녕하세요. 라마 관리자입니다.</h2>
 
         <h3>보유중인 호스팅 정보</h3>
+        
+        <ProfileSwiper/>
       </div>
     </>
   );
