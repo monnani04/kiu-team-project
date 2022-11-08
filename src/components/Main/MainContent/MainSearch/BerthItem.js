@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import style from "../../../../css/Main/MainContent/MainSearch/BerthItem.module.css";
 import berthList from "../../../../dummydata/BerthList.json";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,13 +21,33 @@ export default function BerthItem(props) {
     "₩" +
     Number(berthList.data[props.idx].price).toLocaleString("ko-KR") +
     " / 박";
-
+  const [colorState, setColorState] = useState(false);
+  const [color, setColor] = useState("rgba(0,0,0,0.1)");
   // path 재설정 함수
   let navigate = useNavigate();
 
   useEffect(() => {}, []);
+  useEffect(()=>{
+    colorState === false ? setColor("rgba(0,0,0,0.1)") : setColor("red");
+  },[colorState])
   return (
     <>
+      <div className={style.wishBtn} onClick={()=>{
+        colorState === false ? setColorState(true) : setColorState(false);
+      }}>
+        <FontAwesomeIcon
+          className={style.wishBtnItem1}
+          icon="fa-solid fa-heart"
+          color={color}
+          size="xl"
+        />
+        <FontAwesomeIcon
+          className={style.wishBtnItem2}
+          icon="fa-regular fa-heart"
+          color="rgb(255,255,255)"
+          size="xl"
+        />
+      </div>
       <div
         className={style.wrap}
         onClick={() => {
@@ -55,23 +75,12 @@ export default function BerthItem(props) {
               rules: berthList.data[props.idx].rules,
               lng: berthList.data[props.idx].lng,
               lat: berthList.data[props.idx].lat,
+              hostID:berthList.data[props.idx].hostID,
+              hostName:berthList.data[props.idx].hostName
             },
           });
         }}
       >
-        <div
-          className={style.wishBtn}
-          onClick={(e) => {
-            e.currentTarget.childNodes[0].childNodes[0].style.fill === "red"
-              ? (e.currentTarget.childNodes[0].childNodes[0].style.fill =
-                  "rgba(0,0,0,0.2)")
-              : (e.currentTarget.childNodes[0].childNodes[0].style.fill =
-                  "red");
-          }}
-        >
-          <FontAwesomeIcon icon="fa-solid fa-heart" />
-        </div>
-        <input type="hidden" name="wish" value={false} />
         <Swiper
           pagination={true}
           loop={true}
