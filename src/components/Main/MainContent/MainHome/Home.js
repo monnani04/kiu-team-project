@@ -1,26 +1,26 @@
+import { useRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../../../../css/Main/MainContent/MainHome/Home.module.css";
 
-function LoginBtn() {
-  return (
-    <>
-      <div className={style.div1}>
-        <Link to={"/login"}>
-          <input type="button" className={style.btn1} value="로그인"></input>
-        </Link>
-      </div>
-    </>
-  );
-}
-
 export default function Home() {
   const [auth, setAuth] = useState(1);
+  const imgRef = useRef();
 
+  const imgArr = ["back1.jpg", "back2.jpg", "back3.jpg"];
+
+  useEffect(()=>{
+    // console.dir(imgRef.current);
+    console.log(Math.floor(Math.random()*3))
+    const imgArrSeleted = Math.floor(Math.random()*3);
+    imgRef.current.style.background = `url(../../../../img/${imgArr[imgArrSeleted]})`;
+    imgRef.current.style.backgroundSize = "cover";
+  },[])
   return (
     <>
       <div className={style.wrap}>
-        <img className={style.img} src="/img/house.jpg"></img>
+        <img ref={imgRef} className={style.img}></img>
         <h1 className={style.text}>
           여행을 <br /> 시작해주세요
         </h1>
