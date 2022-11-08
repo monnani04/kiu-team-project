@@ -10,22 +10,23 @@
     width: 30px;
     height: 30px;
     position: relative;
-    top: 50px;
-    left: 270px;
+    top: 45px;
+    left: 275px;
     z-index: 99998;
-    background: url(../../../../img/icon/heart_white.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.wishBtn svg{
-    width: 24.5px;
-    height: 24.5px;
-    position: relative;
-    top: 0px;
-    right: -3px;
+.wishBtnItem1{
+    position: absolute;
+    z-index: 99998;
+    transition: 0.2s ease-in-out;
 }
-.wishBtn path{
-    fill: rgba(0,0,0,0.2);
+.wishBtnItem2{
+    position: absolute;
+    z-index: 99998;
+    transition: 0.2s ease-in-out;
 }
 .imgPath{
     position: relative;
@@ -103,4 +104,7 @@
 .grade{
     font-size: 25px;
     line-height: 25px;
+}
+.wishBtn{
+
 }
