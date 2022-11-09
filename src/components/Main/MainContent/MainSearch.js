@@ -4,6 +4,7 @@ import SearchMap from "./MainSearch/SearchMap";
 import SearchBearthList from "./MainSearch/SearchBerthList";
 import SearchMapBtn from "./MainSearch/SearchMapBtn";
 export default function MainSearch() {
+  
   return (
     <>
       <div className={style.wrap}>
