@@ -4,6 +4,7 @@ import Main from "./routes/Main";
 import MyProfile from "./routes/MyProfile";
 import ExampleRoute from "./routes/ExampleRoute";
 
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -16,6 +17,8 @@ library.add(fas,far, faTwitter, faFontAwesome, faHatChef);
 
 import "swiper/css/bundle";
 import ViewDetailBerth from "./routes/ViewDetailBerth";
+import MyInfo from "./routes/MyInfo";
+import Profile from "./components/Main/MainContent/MainProfile/Profile";
 
 function App() {
   return (
@@ -24,8 +27,10 @@ function App() {
         <Routes>
           <Route path="/example" element={<ExampleRoute />} />
           <Route path="/main/*" element={<Main />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/viewdetailberth" element={<ViewDetailBerth/>} />
+          <Route path="/myinfo/*" element={<MyInfo />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,13 +1,18 @@
 import style from "../../../../css/Main/MainContent/MainProfile/Profile.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Profile() {
+
+  let navigate = useNavigate();
+
   return (
     <>
       <div className={style.wrap}>
         <h1>프로필</h1>
 
-        <div className={style.myprofile}>
+        <div className={style.myprofile} onClick={()=>{navigate(`/myprofile`);}}>
           
             <div>
               <div className={style.imgback} style={{ display: "inline-block" }}>
