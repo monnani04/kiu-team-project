@@ -18,13 +18,14 @@
       "max_people":10,
       "bedroom":2,
       "bed":5,
-      "bathroom":2,
+      "bathroom":22323,
       "facilities":["무선 인터넷","TV","주방","화장실"],
       "rules":["체크인:오후 1:00 ~ 오후 10:00"],
       "lng":35.8674536201437,
       "lat":128.5850556036308,
       "hostID":"sungmin",
-      "hostName":"성민"
+      "hostName":"성민",
+      "hostImg": "sungmin_profile.png"
     },
     {
       "id":1,
@@ -50,7 +51,8 @@
       "lng":35.8674536201437,
       "lat":128.5850556036308,
       "hostID":"changpho",
-      "hostName":"창표"
+      "hostName":"창표",
+      "hostImg": "changpho_profile.png"
     },
     {
       "id":2,
@@ -76,7 +78,8 @@
       "lng":35.8674536201437,
       "lat":128.5850556036308,
       "hostID":"minjeong2",
-      "hostName":"민정"
+      "hostName":"민정",
+      "hostImg": "sungmin_profile.png"
     },
     {
       "id":3,
@@ -102,7 +105,8 @@
       "lng":35.8674536201437,
       "lat":128.5850556036308,
       "hostID":"minjeong1",
-      "hostName":"민정"
+      "hostName":"민정",
+      "hostImg": "sungmin_profile.png"
     },
     {
       "id":4,
@@ -128,7 +132,8 @@
       "lng":35.8674536201437,
       "lat":128.5850556036308,
       "hostID":"uniqueHost",
-      "hostName":"유니크"
+      "hostName":"유니크",
+      "hostImg": "sungmin_profile.png"
     }
   ]
 }
