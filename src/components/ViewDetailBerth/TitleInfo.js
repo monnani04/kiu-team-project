@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
 
 export default function TitleInfo(props) {
-  console.log(props.info);
+  // console.log(props.info);
   const grade = props.info.grade.toFixed(1);
   return (
     <>
@@ -13,6 +13,7 @@ export default function TitleInfo(props) {
           {grade} 후기 ??개
         </div>
         <div>{props.info.addr_lot}</div>
+        <div></div>
       </div>
     </>
   );

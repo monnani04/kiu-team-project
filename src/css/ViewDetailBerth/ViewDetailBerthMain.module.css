@@ -53,8 +53,8 @@
 
 .titleWrap{
     padding: 30px 20px 0 20px;
-    width: calc(100% - 20px);
-    height: 100px;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     /* text-overflow: ellipsis;
@@ -63,6 +63,63 @@
     box-sizing: border-box;
 }
 .titleWrap h1{
+    width: 100%;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+}
+.titleWrap div{
+    width: 100%;
+    margin-top: 10px;
+}
+.titleWrap div:last-child{
+    margin-top: 30px;
+    border-bottom: 1px solid gray;
+}
+.hostWrap{
+    padding: 30px 20px 0 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+    box-sizing: border-box;
+}
+.hostWrap_content{
+    display: flex;
+    flex-direction: row;
+}
+.hostWrap > div:last-child{
+    /* width: 100%; */
+    margin-top: 30px;
+    border-bottom: 1px solid gray;
+}
+.hostWrap_textBox{
 
 }
+.hostWrap_category{
+    font-weight: bold;
+    font-size: 30px;
+}
+.hostWrap_host{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.hostWrap_detailInfo{
+    margin-top: 10px;
+}
+.hostWrap_imgBox{
+
+}
+.profileCircle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    background-size: cover;
+}
+
 
