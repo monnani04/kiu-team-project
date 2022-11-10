@@ -76,7 +76,8 @@ export default function BerthItem(props) {
               lng: berthList.data[props.idx].lng,
               lat: berthList.data[props.idx].lat,
               hostID:berthList.data[props.idx].hostID,
-              hostName:berthList.data[props.idx].hostName
+              hostName:berthList.data[props.idx].hostName,
+              hostImg:berthList.data[props.idx].hostImg
             },
           });
         }}
