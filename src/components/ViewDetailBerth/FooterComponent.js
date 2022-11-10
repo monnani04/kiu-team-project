@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
 
 export default function FooterComponent(props) {
-  console.dir(props.info);
+  let navigate = useNavigate();
+  // console.dir(props.info);
   return (
     <>
       <div className={style.footerEmpty}></div>
@@ -12,7 +14,10 @@ export default function FooterComponent(props) {
             " / 박"}</div>
             <div>12월 12일 ~ 12월 25일</div>
         </div>
-        <div className={style.payBtn}>예약하기</div>
+        <div className={style.payBtn} onClick={()=>{
+          props.setPayLeft("0");
+          document.body.style.overflow="hidden";
+        }}>예약하기</div>
       </div>
     </>
   );

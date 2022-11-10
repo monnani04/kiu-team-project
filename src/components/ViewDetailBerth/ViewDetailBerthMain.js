@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Routes } from "react-router-dom";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
 import BackBtn from "./BackBtn";
 import Facilities from "./Facilities";
 import FooterComponent from "./FooterComponent";
 import HostInfo from "./HostInfo";
 import MapInfo from "./MapInfo";
+import Pay from "./Pay";
 import ReviewInfo from "./ReviewInfo";
 import RulesInfo from "./RulesInfo";
 import TitleInfo from "./TitleInfo";
@@ -19,6 +21,8 @@ export default function ViewDetailBerthMain(props) {
     document.body.style.overflow = "auto";
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
+
+  const [payLeft, setPayLeft] = useState("100%");
   return (
     <>
       <div className={style.wrap}>
@@ -26,13 +30,15 @@ export default function ViewDetailBerthMain(props) {
         <WishBtn />
         <ViewDetailBerthSwiper imgArr={ImgArr} />
         <TitleInfo info={props.state} />
-        <HostInfo info={props.state}/>
-        <MapInfo info={props.state}/>
-        <Facilities info={props.state}/>
-        <ReviewInfo info={props.state}/>
-        <RulesInfo info={props.state}/>
-        <FooterComponent info={props.state}/>
+        <HostInfo info={props.state} />
+        <MapInfo info={props.state} />
+        <Facilities info={props.state} />
+        <ReviewInfo info={props.state} />
+        <RulesInfo info={props.state} />
+        <FooterComponent info={props.state} setPayLeft={setPayLeft}/>
       </div>
+
+      <Pay info={props.state} left={payLeft} setPayLeft={setPayLeft}/>
     </>
   );
 }
