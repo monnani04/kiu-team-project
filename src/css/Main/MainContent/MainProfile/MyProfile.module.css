@@ -52,14 +52,14 @@
     width : 30px;
 }
 
-h2{
+.myprofile_h2{
     width : 355px;
     border-bottom : 1px solid black;
     margin-left : 30px;
     padding-bottom : 30px;
 }
 
-h3{
+.myprofile_h3{
     margin : 30px;
     font-size: medium;
 }
