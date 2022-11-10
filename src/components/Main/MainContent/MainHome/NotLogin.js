@@ -3,11 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../../../../css/Main/MainContent/MainHome/Home.module.css";
-import ReserVation from "./Reservation";
 
-export default function Home() {
+export default function NotLogin() {
   const [auth, setAuth] = useState(0);
-  const [reser, setReser] = useState();
   const imgRef = useRef();
 
   const imgArr = ["back1.jpg", "back2.jpg", "back3.jpg", "back4.jpg", "back5.jpg", "back6.jpg", "back7.jpg", "back8.jpg", "back9.jpg","back10.jpg"];
@@ -30,7 +28,12 @@ export default function Home() {
             <input type="button" className={style.btn} value="둘러보기"></input>
           </Link>
         </div>
-       
+        <br />
+          <div className={style.div1}>
+        <Link to={"/login"}>
+          <input type="button" className={style.btn1} value="로그인"></input>
+        </Link>
+      </div>
       </div>
     </>
   );
