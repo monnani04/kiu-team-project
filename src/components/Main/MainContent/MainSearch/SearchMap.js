@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import style from "../../../../css/Main/MainContent/MainSearch/SearchMap.module.css";
-import KakaoMapScript from "../../../KakaoMapScript";
+import KakaoMapScript from "../../../../KakaoMapScript";
 
 export default function SearchMap() {
   useEffect(() => {

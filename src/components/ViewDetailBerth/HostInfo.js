@@ -1,7 +1,7 @@
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
 
 export default function HostInfo(props) {
-  console.dir(props.info);
+  // console.dir(props.info);
   return (
     <>
       <div className={style.hostWrap}>

@@ -31,7 +31,9 @@ body {
   width: 100%;
   height: 100%;
 }
-
+.swiper-wrapper{
+  height: auto;
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
