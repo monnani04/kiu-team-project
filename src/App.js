@@ -25,7 +25,7 @@ function App() {
           <Route path="/example" element={<ExampleRoute />} />
           <Route path="/main/*" element={<Main />} />
           <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/viewdetailberth" element={<ViewDetailBerth/>} />
+          <Route path="/viewdetailberth/*" element={<ViewDetailBerth/>} />
         </Routes>
       </BrowserRouter>
     </>
