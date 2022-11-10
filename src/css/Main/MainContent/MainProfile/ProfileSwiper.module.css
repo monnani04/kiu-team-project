@@ -13,8 +13,11 @@
     width : 170px;
     height : 150px;
     border-radius: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 .swiperslide h1{
     font-size: medium;
+    padding-top: 20px;
 }
