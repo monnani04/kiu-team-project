@@ -11,7 +11,7 @@ export default function MainNav() {
   const item3Icon = <FontAwesomeIcon icon="fa-solid fa-house" />;
   const item4Icon = <FontAwesomeIcon icon="fa-solid fa-bell" />;
   const item5Icon = <FontAwesomeIcon icon="fa-solid fa-user" />;
-
+;
   const location = useLocation();
 
   const [locationIconFill, setLocationIconFill] = useState(1);
