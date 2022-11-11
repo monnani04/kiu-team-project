@@ -6,7 +6,7 @@ export default function NoticeItem(props) {
     <>
       <div
         style={{
-          width: "370px",
+          width: "380px",
           height: "65px",
           backgroundColor: "white",
           marginBottom: "12px",
@@ -45,7 +45,7 @@ export default function NoticeItem(props) {
           <p
             style={{
               position: "relative",
-              fontSize: "13px",
+              fontSize: "11px",
             }}
           >
             {props.notice}
@@ -53,9 +53,8 @@ export default function NoticeItem(props) {
           <p
             style={{
               position: "relative",
-              fontSize: "13px",
               top: "0",
-              fontSize: "12px",
+              fontSize: "11px",
             }}
           >
             대구광역시 - 중구 - 성민이의 러브 하우스 - 2022-10-28
