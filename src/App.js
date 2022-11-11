@@ -19,12 +19,14 @@ import "swiper/css/bundle";
 import ViewDetailBerth from "./routes/ViewDetailBerth";
 import Profile from "./components/Main/MainContent/MainProfile/Profile";
 import MyInfoContent from "./routes/MyInfoContent";
+import Intro from "./routes/Intro";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Intro/>}/>
           <Route path="/example" element={<ExampleRoute />} />
           <Route path="/main/*" element={<Main />} />
           <Route path="/profile" element={<Profile />} />

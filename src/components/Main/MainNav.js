@@ -31,7 +31,7 @@ export default function MainNav() {
         <div className={style.itemBox}>
           <MainNavItem name="둘러보기" icon={item1Icon} value="search"  fill={locationIconFill === 1 ?  "#A53939" : "#000"}/>
           <MainNavItem name="위시리스트" icon={item2Icon} value="wishlist"  fill={locationIconFill === 2 ?  "#A53939" : "#000"}/>
-          <MainNavItem name="홈으로" icon={item3Icon} value="home"  fill={locationIconFill === 3 ?  "#A53939" : "#000"}/>
+          <MainNavItem name="숙소" icon={item3Icon} value="home"  fill={locationIconFill === 3 ?  "#A53939" : "#000"}/>
           <MainNavItem name="알림" icon={item4Icon} value="notice"  fill={locationIconFill === 4 ?  "#A53939" : "#000"}/>
           <MainNavItem name="프로필" icon={item5Icon} value="profile"  fill={locationIconFill === 5 ?  "#A53939" : "#000"}/>
         </div>
