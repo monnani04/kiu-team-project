@@ -81,4 +81,5 @@
     transform: translateX(-50%);
     margin-top: 50px;
     margin-bottom: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);;
 }
