@@ -1,30 +1,34 @@
 import style from "../../../../css/Main/MainContent/MainProfile/Profile.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-
+import { Cookies } from "react-cookie";
 
 export default function Profile() {
-
   let navigate = useNavigate();
+
+  const cookies = new Cookies();
 
   return (
     <>
       <div className={style.wrap}>
         <h1>프로필</h1>
 
-        <div className={style.myprofile} onClick={()=>{navigate(`/myprofile`);}}>
-          
-            <div>
-              <div className={style.imgback} style={{ display: "inline-block" }}>
-                <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
-              </div>
-              <div style={{ display: "inline-block", padding: "10px" }}>
-                라마 관리자
-                <div className={style.stitle}>프로필 보기</div>
-              </div>
+        <div
+          className={style.myprofile}
+          onClick={() => {
+            navigate(`/myprofile`);
+          }}
+        >
+          <div>
+            <div className={style.imgback} style={{ display: "inline-block" }}>
+              <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
             </div>
-            <FontAwesomeIcon icon="fa-solid fa-angle-right" />
-          
+            <div style={{ display: "inline-block", padding: "10px" }}>
+              라마 관리자
+              <div className={style.stitle}>프로필 보기</div>
+            </div>
+          </div>
+          <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
 
         <h2>내 정보 관리</h2>
@@ -62,9 +66,9 @@ export default function Profile() {
           매출 관리
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
-        
       </div>
-      <button className={style.button}>로그아웃</button>
+      <button className={style.button} onClick={()=>{
+      }}>로그아웃</button>
     </>
   );
 }

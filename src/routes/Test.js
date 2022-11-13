@@ -1,26 +1,73 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-
-import "../css/App.css";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+// import {authStateFunc} from "../store/modules/authSlice";
 
 export default function Test() {
+  const authSlice = useSelector((state) => {
+    // return state.스토어에서가져오고자 하는 state이름 선택.value;
+    return state.auth.value;
+  });
+
+  const dispatch = useDispatch();
+
+  const [cookies, setCookie] = useCookies(["name"]);
+
+  useEffect(() => {
+    axios
+      .get("/api/users/checkauthentication")
+      .then((res) => {
+        setContent(res.data);
+      })
+      .catch((err) => {
+        console.dir(err);
+        setContent("please login");
+      });
+  }, []);
+
+  let params = {
+    email: String,
+    password: String,
+  };
+
+  const [content, setContent] = useState();
+  useEffect(() => {
+    !content ? console.log(false) : console.log(true);
+  }, [content]);
   return (
     <>
-      <Swiper className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+      {cookies.access_token && <h1>Hello {cookies.access_token}!</h1>}
+      <input type="text" name="name" defaultValue="john3" />
+      <input type="password" name="password" defaultValue="123456" />
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          params.email = e.currentTarget.parentNode.childNodes[0].value;
+          params.password = e.currentTarget.parentNode.childNodes[1].value;
+          // console.dir(params);
+          axios({
+            method: "post",
+            url: "/api/auth/login",
+            data: JSON.stringify(params),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              withCredentials: true,
+              crossDomain: true,
+              credentials: true,
+            },
+          })
+            .then((res) => {
+              console.dir(res);
+            })
+            .catch((err) => {
+              console.dir(err);
+            });
+        }}
+      >
+        login
+      </button>
+      <div>{content}</div>
     </>
   );
 }

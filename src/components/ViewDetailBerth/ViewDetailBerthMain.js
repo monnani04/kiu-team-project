@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes } from "react-router-dom";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
+import LoginSlide from "../Login/LoginSlide";
 import BackBtn from "./BackBtn";
 import Facilities from "./Facilities";
 import FooterComponent from "./FooterComponent";
@@ -39,6 +40,7 @@ export default function ViewDetailBerthMain(props) {
       </div>
 
       <Pay info={props.state} left={payLeft} setPayLeft={setPayLeft}/>
+      <LoginSlide/>
     </>
   );
 }
