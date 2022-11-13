@@ -6,6 +6,9 @@ import mainNavReducer from "./modules/mainNavSlice";
 import SearchMapBtnReducer from "./modules/SearchMapBtnSlice";
 import latlngReducer from "./modules/latlngSlice";
 import myinfoReducer from "./modules/myinfoSlice";
+import authReducer from "./modules/authSlice";
+import authUIReducer from "./modules/authUIStateSlice";
+
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +17,9 @@ export const store = configureStore({
     mainNav: mainNavReducer,
     SearchMapBtn: SearchMapBtnReducer,
     latlng:latlngReducer,
-    myinfo:myinfoReducer
+    myinfo:myinfoReducer,
+    auth:authReducer,
+    authUI:authUIReducer
   },
   middleware: [thunk]
 })

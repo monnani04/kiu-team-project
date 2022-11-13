@@ -9,7 +9,7 @@
     left: 20px;
     width: 36px;
     height: 36px;
-    z-index: 99999;
+    z-index: 99997;
     background-color: #f8f8f8;
     border-radius: 50%;
     display: flex;
@@ -384,7 +384,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     position: fixed;
-    z-index: 99999;
+    z-index: 99997;
     bottom: 0;
     left: 0;
     display: flex;

@@ -102,6 +102,7 @@ export default function BerthItem(props) {
                 style={{
                   backgroundImage: `url(../../../../img/${item})`,
                 }}
+                // loading="lazy"
               ></SwiperSlide>
             );
           })}

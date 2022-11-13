@@ -25,9 +25,7 @@ export default function Pay(props) {
           />
         </div>
         <div className={style.title}>예약하기</div>
-        <div className={style.payContentWrap}>
-
-        </div>
+        <div className={style.payContentWrap}></div>
 
         <div className={style.footerWrap}>
           <div className={style.payText}>
@@ -36,11 +34,7 @@ export default function Pay(props) {
             </div>
             <div>12월 12일 ~ 12월 25일</div>
           </div>
-          <div
-            className={style.payBtn}
-            onClick={() => {
-            }}
-          >
+          <div className={style.payBtn} onClick={() => {}}>
             다음
           </div>
         </div>

@@ -1,11 +1,12 @@
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
-import KakaoMapScript from "../../KakaoMapScript";
+import KakaoMapScript from "../../KakaoMapScript_detailView";
 import { useEffect } from "react";
 
 
 export default function MapInfo(props) {
     useEffect(() => {
         KakaoMapScript();
+        // KakaoMapScript();
       }, []);
   return (
     <>

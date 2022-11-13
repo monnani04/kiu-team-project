@@ -1,26 +1,39 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import Home from "./MainHome/Home";
 import NotLogin from "./MainHome/NotLogin";
 import Reservation from "./MainHome/Reservation";
 
 export default function MainHome() {
-  const [auth, setAuth] = useState(0);
-  const [reser, setReser] = useState(0);
+  const [auth, setAuth] = useState();
+  const [reserve, setReserve] = useState(true);
 
-  useEffect(()=>{
+  useEffect(() => {
     document.body.style.overflow = "auto";
-  },[])
+    axios
+      .get("/api/users/checkauthentication")
+      .then((res) => {
+        setAuth(true);
+      })
+      .catch((err) => {
+        // console.dir(err);
+        setAuth(false);
+      });
+  }, []);
   return (
     <>
       <div>
-        {
-        auth === undefined 
-        ? <NotLogin /> 
-        : (reser === undefined
-          ? <Home/>
-          : <Reservation /> 
-          ) 
-        }
+        {auth === false ? (
+          <NotLogin />
+        ) : auth === true ? (
+          reserve === false ? (
+            <Home />
+          ) : (
+            <Reservation />
+          )
+        ) : (
+          false
+        )}
       </div>
     </>
   );

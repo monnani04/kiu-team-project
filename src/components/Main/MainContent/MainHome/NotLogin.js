@@ -30,7 +30,7 @@ export default function NotLogin() {
         </div>
         <br />
           <div className={style.div1}>
-        <Link to={"/login"}>
+        <Link to={"/main/profile"}>
           <input type="button" className={style.btn1} value="로그인"></input>
         </Link>
       </div>
