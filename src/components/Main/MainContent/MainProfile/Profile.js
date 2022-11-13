@@ -2,8 +2,9 @@ import style from "../../../../css/Main/MainContent/MainProfile/Profile.module.c
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { Cookies } from "react-cookie";
+import axios from "axios";
 
-export default function Profile() {
+export default function Profile(props) {
   let navigate = useNavigate();
 
   const cookies = new Cookies();
@@ -67,8 +68,22 @@ export default function Profile() {
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
       </div>
-      <button className={style.button} onClick={()=>{
-      }}>로그아웃</button>
+      <button
+        className={style.button}
+        onClick={() => {
+          axios
+            .post("/api/auth/logout")
+            .then((res) => {
+              console.dir(res);
+              props.authState(false);
+            })
+            .catch((err) => {
+              console.dir(err);
+            });
+        }}
+      >
+        로그아웃
+      </button>
     </>
   );
 }
