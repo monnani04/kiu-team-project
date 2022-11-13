@@ -7,6 +7,8 @@ import "swiper/css/pagination";
 import { Pagination, Zoom } from "swiper";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { authUIDisplayFunc, authUIOpacityFunc, authUIStateFunc, authUITopFunc } from "../../../../store/modules/authUIStateSlice";
+import { useDispatch } from "react-redux";
 
 export default function BerthItem(props) {
   // console.dir(berthList.data);
@@ -26,7 +28,8 @@ export default function BerthItem(props) {
   // path 재설정 함수
   let navigate = useNavigate();
 
-  useEffect(() => {}, []);
+  const dispatch = useDispatch();
+
   useEffect(()=>{
     colorState === false ? setColor("rgba(0,0,0,0.1)") : setColor("red");
   },[colorState])
@@ -80,6 +83,11 @@ export default function BerthItem(props) {
               hostImg:berthList.data[props.idx].hostImg
             },
           });
+
+          dispatch(authUIStateFunc(false));
+          dispatch(authUITopFunc("100%"));
+          dispatch(authUIOpacityFunc(0));
+          dispatch(authUIDisplayFunc("none"));
         }}
       >
         <Swiper

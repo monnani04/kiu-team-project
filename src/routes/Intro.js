@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Intro() {
   let navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
+    // console.dir(location.state);
     setTimeout(() => {
-      navigate("/main");
-    }, 5000);
+      navigate(`/main`)
+    }, 2500);
   }, []);
   return (
     <>

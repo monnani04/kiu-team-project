@@ -21,5 +21,5 @@ export default function MainProfile() {
         setAuth(false);
       });
   }, []);
-  return <>{auth === false ? <ProfileLogin /> : auth===true ?<Profile /> : false}</>;
+  return <>{auth === false ? <ProfileLogin /> : auth===true ?<Profile authState={setAuth}/> : false}</>;
 }

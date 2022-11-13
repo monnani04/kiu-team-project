@@ -8,6 +8,7 @@ export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   let params = {
@@ -55,7 +56,11 @@ export default function Login() {
             })
               .then((res) => {
                 console.dir(res);
-                navigate("/");
+                navigate("/", {
+                  state:{
+                    nowPath: location.pathname
+                  }
+                });
               })
               .catch((err) => {
                 console.dir(err);
