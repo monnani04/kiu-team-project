@@ -1,16 +1,17 @@
 export default function ReservationItem(props) {
   return (
-    <> 
+    <>
       <p
-        style={{                    
-            position: "relative",
-            bottom: "100px",
-            left: "14px",
-            fontWeight: "bold",
-            fontSize: "15px"
+        style={{
+          position: "relative",
+          bottom: "100px",
+          left: "14px",
+          fontWeight: "bold",
+          fontSize: "15px",
         }}
-      >{props.date}
-      </p>     
+      >
+        {props.date}
+      </p>
       <div
         style={{
           width: "360px",
@@ -37,13 +38,12 @@ export default function ReservationItem(props) {
             flexDirection: "column",
           }}
         >
-          
           <p
             style={{
               position: "relative",
-              fontSize: "13px",              
+              fontSize: "13px",
               fontWeight: "bold",
-              marginBottom: "5px"
+              marginBottom: "5px",
             }}
           >
             {props.notice}
@@ -52,7 +52,7 @@ export default function ReservationItem(props) {
             style={{
               position: "relative",
               fontSize: "13px",
-              marginBottom: "5px"
+              marginBottom: "5px",
             }}
           >
             {props.content}
@@ -61,7 +61,7 @@ export default function ReservationItem(props) {
             style={{
               position: "relative",
               fontSize: "13px",
-              marginBottom: "5px"
+              marginBottom: "5px",
             }}
           >
             {props.days}
@@ -69,7 +69,7 @@ export default function ReservationItem(props) {
           <p
             style={{
               position: "relative",
-              fontSize: "13px"
+              fontSize: "13px",
             }}
           >
             {props.people}
