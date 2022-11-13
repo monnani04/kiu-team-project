@@ -8,8 +8,9 @@ import FooterComponent from "./FooterComponent";
 import HostInfo from "./HostInfo";
 import MapInfo from "./MapInfo";
 import Pay from "./Pay";
-import ReviewInfo from "./ReviewInfo";
 import RulesInfo from "./RulesInfo";
+import ReviewInfo from "./ReviewInfo";
+import Report from "./Report";
 import TitleInfo from "./TitleInfo";
 import ViewDetailBerthSwiper from "./ViewDetailBerthSwiper";
 import WishBtn from "./WishBtn";
@@ -36,11 +37,12 @@ export default function ViewDetailBerthMain(props) {
         <Facilities info={props.state} />
         <ReviewInfo info={props.state} />
         <RulesInfo info={props.state} />
-        <FooterComponent info={props.state} setPayLeft={setPayLeft}/>
+        <Report info={props.state} />
+        <FooterComponent info={props.state} setPayLeft={setPayLeft} />
       </div>
 
-      <Pay info={props.state} left={payLeft} setPayLeft={setPayLeft}/>
-      <LoginSlide/>
+      <Pay info={props.state} left={payLeft} setPayLeft={setPayLeft} />
+      <LoginSlide />
     </>
   );
 }
