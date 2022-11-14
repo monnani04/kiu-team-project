@@ -17,7 +17,7 @@ export default function ReservationItem(props) {
           width: "360px",
           height: "150px",
           backgroundColor: "white",
-          marginBottom: "80px",
+          marginBottom: "60px",
           borderRadius: "20px",
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
           top: "10%",
@@ -79,7 +79,6 @@ export default function ReservationItem(props) {
         <div
           style={{
             position: "relative",
-            // left: "89%",
             left: "0",
             width: "60px",
             height: "50px",
