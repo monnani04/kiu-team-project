@@ -19,7 +19,7 @@ export default function Profile(props) {
           onClick={() => {
             navigate(`/myprofile`);
           }}
-        >
+          >
           <div>
             <div className={style.imgback} style={{ display: "inline-block" }}>
               <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
@@ -33,19 +33,31 @@ export default function Profile(props) {
         </div>
 
         <h2>내 정보 관리</h2>
-        <div className={style.bord}>
+        <div className={style.bord}
+          onClick={() =>{
+              navigate(`/myinfocontent/personalinfo`);
+          }}>
           개인 정보
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
-        <div className={style.bord}>
+        <div className={style.bord}
+          onClick={() =>{
+            navigate(`/myinfocontent/reservation`);
+          }}>
           예약 확인
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
-        <div className={style.bord}>
+        <div className={style.bord}
+          onClick={() =>{
+            navigate(`/myinfocontent/review`);
+          }}>
           나의 후기
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>
-        <div className={style.bord}>
+        <div className={style.bord}
+          onClick={() =>{
+            navigate(`/myinfocontent/recent`);
+          }}>
           최근 본 숙소
           <FontAwesomeIcon icon="fa-solid fa-angle-right" />
         </div>

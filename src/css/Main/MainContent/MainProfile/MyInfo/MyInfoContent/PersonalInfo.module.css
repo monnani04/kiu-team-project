@@ -48,9 +48,16 @@
     border : none;
     font: 1em sans-serif;
     font-weight: bold;
+    width : 350px;
 }
 .input:focus{
     outline: none;
+}
+
+.input2{
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .button{
