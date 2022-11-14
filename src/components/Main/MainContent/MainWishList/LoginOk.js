@@ -4,8 +4,7 @@ import WishItem from "./WishItem";
 export default function LoginOk(props) {
   return (
     <>
-      <div className={style.wrap}>
-        <div className={style.div}>
+        <div>
           <h2 className={style.wish}>위시 리스트 </h2>
           <div className={style.list}>
             <WishItem title="성민이의 러브 하우스1"/>
@@ -13,8 +12,7 @@ export default function LoginOk(props) {
             <WishItem title="성민이의 러브 하우스3"/>
             <WishItem title="성민이의 러브 하우스4"/>
             <WishItem title="성민이의 러브 하우스5"/>
-            <WishItem title="성민이의 러브 하우스6"/>
-          </div>
+            <WishItem title="성민이의 러브 하우스6"/>          
         </div>
       </div>
     </>
