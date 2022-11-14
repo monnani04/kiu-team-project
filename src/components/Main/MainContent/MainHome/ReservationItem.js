@@ -79,7 +79,6 @@ export default function ReservationItem(props) {
         <div
           style={{
             position: "relative",
-            // left: "89%",
             left: "0",
             width: "60px",
             height: "50px",
