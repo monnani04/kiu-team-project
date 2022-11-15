@@ -22,6 +22,8 @@ import MyInfoContent from "./routes/MyInfoContent";
 import Intro from "./routes/Intro";
 import Test from "./routes/Test";
 import { useEffect } from "react";
+import SearchArea from "./components/Main/MainContent/MainSearch/SearchArea";
+import SearchDate from "./components/Main/MainContent/MainSearch/SearchDate";
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
           <Route path="/main/*" element={<Main />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/searcharea" element={<SearchArea />}/>
+          <Route path="/searchdate" element={<SearchDate />}/>
+
 
           <Route path="/viewdetailberth/*" element={<ViewDetailBerth/>} />
 
