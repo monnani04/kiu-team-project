@@ -1,3 +1,9 @@
+.wrap{
+    position : fixed;
+    height : 100%;
+    width : 100%;
+}
+
 .backBtn{
     display: flex;
     position : relative;
@@ -5,19 +11,42 @@
     top : 25px;
 }
 .box1{
-    position: relative;
+    position: fixed; 
     left: 50%;
     transform: translate(-50%, 20%);
     width : 300px;
-    height : 250px;
+    height : 300px;
     border-radius: 32px;
     background-color: white;
     border : none;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     padding : 25px;
     box-sizing: border-box;
+    
 }
 
+.search{
+    border: 1px solid gray;
+    height : 40px;
+    display : flex;
+    margin-top: 15px;  
+    border-radius: 15px;
+}
+
+.icon{
+    height : 40px;
+    display : flex;
+    align-items: center;
+    padding-left : 10px;
+    padding-right: 10px;
+}
+.input{
+    border: none;
+}
+
+.input:focus{
+    outline: none;
+}
 
 .box2:hover {    
     position: relative;
@@ -43,4 +72,20 @@
     width : 300px;
     height : 200px;
     border: 1px solid blue;
+}
+
+.swiper{
+    margin-top: 20px;
+    height : 150px;
+    width : 350px;
+    border : 1px solid black;
+
+}
+
+.swiperslide{
+    width : 200px;
+    border : 1px solid black;
+    border-radius: 20px;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); */
+    flex-direction: column;
 }
