@@ -1,4 +1,5 @@
 import style from "../../../../css/Main/MainContent/MainSearch/SearchLinkBox.module.css";
+import SearchArea from "./SearchArea";
 
 export default function SearchLinkBox() {
   return (
