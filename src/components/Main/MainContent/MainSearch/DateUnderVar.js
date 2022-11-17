@@ -1,7 +1,7 @@
-import style from "../../../../css/Main/MainContent/MainSearch/Undervar.module.css";
+import style from "../../../../css/Main/MainContent/MainSearch/DateUnderVar.module.css";
 
 
-export default function Undervar(){
+export default function DateUnderVar(){
     return(<>
         <div className={style.footerWrap}>
           <div className={style.payText}>
@@ -10,7 +10,7 @@ export default function Undervar(){
             </div>
           </div>
           <div className={style.payBtn} onClick={() => {}}>
-            검색
+            다음
           </div>
         </div>
     </>);

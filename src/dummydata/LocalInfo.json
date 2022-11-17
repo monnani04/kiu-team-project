@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "localname": "대구",
+            "localImg" : []
+        },
+        {
+            "localname": "서울",
+            "localImg" : []
+        },
+        {
+            "localname": "부산",
+            "localImg" : []
+        },
+        {
+            "localname": "포항",
+            "localImg" : []
+        },
+        {
+            "localname": "대전",
+            "localImg" : []
+        }
+    ]
+}
