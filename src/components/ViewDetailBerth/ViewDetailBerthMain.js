@@ -24,7 +24,8 @@ export default function ViewDetailBerthMain(props) {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
 
-  const [payLeft, setPayLeft] = useState("100%");
+  const [payLeft, setPayLeft] = useState("0%");
+  // const [thisWrapOverflow, setThisWrapOverflow] = useState();
   return (
     <>
       <div className={style.wrap}>

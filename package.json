@@ -24,6 +24,7 @@
     "react-awesome-reveal": "^4.1.0",
     "react-cookie": "^4.1.1",
     "react-date-range": "^1.4.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
     "react-redux": "^8.0.4",
@@ -32,6 +33,7 @@
     "react-transition-group": "^4.4.5",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
+    "rsuite": "^5.22.1",
     "swiper": "^8.4.4",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"
