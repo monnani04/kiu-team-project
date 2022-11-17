@@ -2,23 +2,31 @@
     "data": [
         {
             "localname": "대구",
-            "localImg" : []
+            "localImg" : "/img/local/daegu.png"
         },
         {
             "localname": "서울",
-            "localImg" : []
+            "localImg" : "/img/local/seoul.png"
         },
         {
             "localname": "부산",
-            "localImg" : []
+            "localImg" : "/img/local/busan.png"
         },
         {
-            "localname": "포항",
-            "localImg" : []
+            "localname": "구미",
+            "localImg" : "/img/local/gumi.png"
         },
         {
-            "localname": "대전",
-            "localImg" : []
+            "localname": "삼척",
+            "localImg" : "/img/local/samcheok.png"
+        },
+        {
+            "localname": "상주",
+            "localImg" : "/img/local/sangju.png"
+        },
+        {
+            "localname": "울산",
+            "localImg" : "/img/local/ulsan.png"
         }
     ]
 }
