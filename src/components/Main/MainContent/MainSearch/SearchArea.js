@@ -7,7 +7,9 @@ import LocalInfo from "../../../../dummydata/LocalInfo.json";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function SearchArea() {
+export default function SearchArea(props) {
+
+  const Local = LocalInfo.data;
     
   return (
     <>
@@ -43,6 +45,15 @@ export default function SearchArea() {
                 slidesPerView={3}
                 spaceBetween={30}
                 >
+                  {Local.map((item, i)=> {
+                    return (
+                      <SwiperSlide key={i} className={style.swiperslide}>
+                        <div>{i}</div>
+                        
+                      </SwiperSlide>
+
+                    )
+                  })}
 
 
                 {/* <SwiperSlide className={style.swiperslide} style={{width : "110px", height : "110px"}}>Slide 1</SwiperSlide>
