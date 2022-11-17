@@ -24,6 +24,7 @@ import Test from "./routes/Test";
 import { useEffect } from "react";
 import SearchArea from "./components/Main/MainContent/MainSearch/SearchArea";
 import SearchDate from "./components/Main/MainContent/MainSearch/SearchDate";
+import SearchNumber from "./components/Main/MainContent/MainSearch/SearchNumber";
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/searcharea" element={<SearchArea />}/>
           <Route path="/searchdate" element={<SearchDate />}/>
-
+          <Route path="/searchnumber" element={<SearchNumber />}/>
 
           <Route path="/viewdetailberth/*" element={<ViewDetailBerth/>} />
 

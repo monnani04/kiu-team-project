@@ -1,7 +1,3 @@
-/* .wrap {
-    position: absolute;
-} */
-
 .backBtn{
     position : absolute;
     left : 30px;
@@ -24,7 +20,7 @@
 
 .datebox {
     width: 300px;
-    height: 500px;
+    height: 450px;
     border: 1px solid none;
     border-radius: 32px;
     position: relative;
@@ -35,7 +31,7 @@
 }
 
 .date {
-    position: relative;
+    position: absolute;
     top: 20px;
     left: 20px;
     font-size: 20px;
@@ -43,7 +39,9 @@
 }
 
 .cal {
-    position: relative;
-    top: 50px;
-    width: 250px;
+    position: absolute;
+    top: 55px;
+    width: 300px;
 }
+
+
