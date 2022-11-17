@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
 
 export default function RulesInfo(props){
-    console.dir(props.info)
+    // console.dir(props.info)
     return(
         <>
         <div className={style.RulesInfoWrap}>

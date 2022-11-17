@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -9,6 +9,7 @@
     backdrop-filter: blur(10px);
     transition: 0.2s ease-in-out;
 }
+
 .backBtn {
     position: absolute;
     top: 20px;
@@ -22,7 +23,8 @@
     align-items: center;
     justify-content: center;
 }
-.title{
+
+.title {
     position: relative;
     font-size: 30px;
     width: 100%;
@@ -30,34 +32,158 @@
     margin-top: 20px;
     font-weight: bold
 }
-.payContentWrap{
+
+.payContentWrap {
     width: 100%;
-    height: calc(100% - 138px);
+    height: calc(100% - 140px);
     box-sizing: border-box;
+    overflow: auto;
+    /* display: none; */
+}
+
+.payItem1,
+.payItem2,
+.payItem3,
+.payItem4,
+.payItem5 {
+    width: 360px;
+    height: 170px;
+    border-radius: 30px;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.payItem1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.payItem1 > div:nth-child(1){
+    width: 170px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.payItem1 > div:nth-child(1) h4{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payItem1 > div:nth-child(1) div{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.payItem1 > div:nth-child(2){
+    width: 130px;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.payItem2_wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dateWrap{
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+.guestWrap{
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+
+.payItem3{
+    margin-bottom: 100px;
+}
+.payItem3_wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.payItem3_box{
+    display: flex;
+    justify-content: space-between;
+}
+.payItem4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.payItem4_wrap{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+.payImg_wrap{
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    width: 48%;
+    height: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.startDate{
+    border: none;
+    width: 100px;
+}
+.endDate{
+    margin-left: 6px;
+    margin-top: 5px;
+    border: none;
+    width: 100px;
+}
+.startDate:focus, .endDate:focus{
+    outline: none;
+}
+.adult_num{
+    width: 50px;
+    border:none;
+    font-size:15px;
+}
+.children_num{
+    width: 50px;
+    border:none;
+    font-size:15px;    
+    /* filter: brightness(90%); */
+}
+.adult_num:focus, .children_num:focus{
+    outline: none;
 }
 
 .footerWrap {
     width: 100%;
     height: 80px;
-    background-color: white;
+    background-color: transparent;
     box-sizing: border-box;
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    position: absolute;
+    /* border-top: 1px solid rgba(0, 0, 0, 0.3); */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
+    position: fixed;
     z-index: 99999;
     bottom: 0;
     left: 0;
     display: flex;
-    padding: 20px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
-.payText div:last-child{
-    font-size: 12px;
-    text-decoration: underline;
-    margin-top: 5px;
-}
-.payBtn{
+
+.payBtn {
     width: 120px;
     height: 50px;
     border-radius: 15px;
@@ -65,5 +191,89 @@
     color: white;
     text-align: center;
     line-height: 50px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+}
+
+.loading{
+    background-image: url(../../img/loading.gif);
+    background-size: cover;
+    background-position: 50% 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.PaySuccess{
+    width: 100%;
+    height: calc(100% - 38px);
+    box-sizing: border-box;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.PaySuccess_box{
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.PaySuccess_box h4{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.homeBtn{
+    width: 120px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #5e75e6;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 30px;
+}
+.alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    z-index: 9999999;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.alert div:nth-child(1){
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.alert div:nth-child(2){
+    width: 70px;
+    height: 30px;
+    background-color: #5e75e6;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
