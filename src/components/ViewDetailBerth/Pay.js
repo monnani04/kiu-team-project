@@ -148,9 +148,8 @@ export default function Pay(props) {
                     e.currentTarget.innerText === "수정"
                       ? ((e.currentTarget.previousSibling.childNodes[2].readOnly = false),
                         (e.currentTarget.previousSibling.childNodes[4].readOnly = false),
-                        e.currentTarget.previousSibling.childNodes[2].focus()(
-                          (e.currentTarget.innerText = "저장")
-                        ))
+                        e.currentTarget.previousSibling.childNodes[2].focus(),
+                        (e.currentTarget.innerText = "저장"))
                       : ((e.currentTarget.previousSibling.childNodes[2].readOnly = true),
                         (e.currentTarget.previousSibling.childNodes[4].readOnly = true),
                         (e.currentTarget.innerText = "수정"));
@@ -263,10 +262,15 @@ export default function Pay(props) {
             <h4>예약이</h4>
             <h4>완료되었습니다</h4>
           </div>
-          <div className={style.homeBtn} onClick={()=>{
-            dispatch(navStateFunc("home"));
-            navigate("/main");
-          }}>홈으로</div>
+          <div
+            className={style.homeBtn}
+            onClick={() => {
+              dispatch(navStateFunc("home"));
+              navigate("/main");
+            }}
+          >
+            홈으로
+          </div>
         </div>
 
         <div className={style.footerWrap}>
