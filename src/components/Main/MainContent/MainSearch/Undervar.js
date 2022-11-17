@@ -1,7 +1,7 @@
 import style from "../../../../css/Main/MainContent/MainSearch/Undervar.module.css";
 
 
-export default function Undervar(){
+export default function Underbar(){
     return(<>
         <div className={style.footerWrap}>
           <div className={style.payText}>

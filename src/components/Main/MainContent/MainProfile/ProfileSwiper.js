@@ -2,10 +2,6 @@ import style from "../../../../css/Main/MainContent/MainProfile/ProfileSwiper.mo
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HostingInfo from "../../../../dummydata/HostingInfo.json";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
 // import { Pagination } from "swiper";
 
 export default function ProfileSwiper() {
@@ -27,7 +23,7 @@ export default function ProfileSwiper() {
             return (
               <SwiperSlide key={i} className={style.swiperslide} style={{width : "200px", height : "230px",}}>
                 <img className={style.img} src="/img/minjeongHome1.jpg"></img>
-                <h1>Slide {i} </h1>
+                <h1>러브하우스 {i} </h1>
               </SwiperSlide>
             );
           })}
