@@ -33,14 +33,13 @@
     position : relative;
     left : 50%;
     transform : translateX(-50%);
-    border : 1px solid black;
 }
 
 .imgdiv {
     display : flex;
     justify-content: space-between;
     align-items: center;
-    padding-top : 20px;
+    padding-top : 30px;
     
 }
 .imgback{
@@ -62,13 +61,14 @@
 }
 
 .myprofile_h2{
-    width : 355px;
+    width : 350px;
     border-bottom : 1px solid black;
-    margin-left : 30px;
+    padding-top: 30px;
     padding-bottom : 30px;
 }
 
 .myprofile_h3{
-    margin : 30px;
+    padding-top : 30px;
+    padding-bottom : 30px;
     font-size: medium;
 }

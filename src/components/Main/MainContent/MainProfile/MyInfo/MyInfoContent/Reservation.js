@@ -13,7 +13,7 @@ export default function Reservation(){
               days="2022-10-27 ~ 2022-11-03"
               people="성인 - 2명 아동 - 2명"
             />
-            <ReservationItem
+            {/* <ReservationItem
               date="2022-09-27"
               notice="창표의 비닐 하우스"
               content="호스트 명 - 창표"
@@ -33,7 +33,7 @@ export default function Reservation(){
               content="호스트 명 - 민정"
               days="2022-07-27 ~ 2022-08-03"
               people="성인 - 2명 아동 - 2명"
-            />
+            /> */}
           </div>
         {/* </div> */}
       {/* </div> */}

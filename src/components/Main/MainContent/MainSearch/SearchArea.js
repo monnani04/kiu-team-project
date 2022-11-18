@@ -64,7 +64,7 @@ export default function SearchArea(props) {
                             })
                             e.currentTarget.style.border = "2px solid rgb(150, 150, 150)";
                           }}>
-                        </img>
+                        </img> 
                         <div style={{fontSize:"15px", paddingTop:"5px"}}>{item.localname}</div>
                       </SwiperSlide>
 

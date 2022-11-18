@@ -7,7 +7,7 @@ import { myinfoStateFunc } from "../../../../../store/modules/myinfoSlice";
 export default function MyInfoNav(props) {
   let navigate = useNavigate();
 
-  console.log(props.myinfoState);
+  // console.log(props.myinfoState);
 
   const dispatch = useDispatch();
 
