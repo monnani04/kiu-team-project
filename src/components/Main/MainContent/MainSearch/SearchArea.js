@@ -11,9 +11,6 @@ import { useRef } from "react";
 export default function SearchArea(props) {
 
   const Local = LocalInfo.data;
-
-  // console.dir(Local);
-
   const imgRef= useRef([]);
     
   return (
