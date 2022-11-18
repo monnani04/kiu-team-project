@@ -30,7 +30,7 @@ export default function SearchDate() {
             </div>
             <div className={style.datebox}>
                 <div>
-                    <span className={style.date}>날짜를 선택하세요.</span>
+                    <span className={style.date}>날짜를 선택하세요</span>
                     <DateRange
                         editableDateInputs={true}
                         onChange={(item) => setDate([item.selection])}

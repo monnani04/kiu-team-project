@@ -1,5 +1,99 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;     
+    left: 50%;
+    transform: translate(-50%, 15%);
+}
+
 .backBtn{
     position : absolute;
     left : 30px;
     top : 25px;
+}
+
+.areabox {
+    border: none;
+    width: 300px;
+    height: 80px;
+    border-radius: 32px;
+    background-color: white;    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding : 28px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+.datebox {
+    border: none;
+    width: 300px;
+    height: 80px;
+    border-radius: 32px;
+    background-color: white;    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding : 28px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: gray;  
+}
+
+.numberbox {
+    
+    border: none;
+    width: 300px;
+    height: 250px;
+    border-radius: 32px;
+    /* position: relative;    
+    left: 50%;
+    transform: translate(-50%, 38%); */
+    background-color: white;    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding : 28px;
+    box-sizing: border-box;
+}
+
+.information {    
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.options {
+    position: relative;
+    top:20px;
+    background-color: white;
+    color: gray; 
+}
+
+.optionItem {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.optionCounterButton:disabled {
+    cursor: not-allowed;
 }
