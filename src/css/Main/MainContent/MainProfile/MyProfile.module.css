@@ -28,11 +28,20 @@
     height : 100px;
 }
 
+.wrap2{
+    width : 350px;
+    position : relative;
+    left : 50%;
+    transform : translateX(-50%);
+    border : 1px solid black;
+}
+
 .imgdiv {
     display : flex;
     justify-content: space-between;
     align-items: center;
-    padding : 30px;
+    padding-top : 20px;
+    
 }
 .imgback{
     background-color: white;

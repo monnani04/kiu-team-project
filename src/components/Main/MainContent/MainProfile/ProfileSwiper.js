@@ -22,8 +22,8 @@ export default function ProfileSwiper() {
           {HosingInfo.map((item, i) => {
             return (
               <SwiperSlide key={i} className={style.swiperslide} style={{width : "200px", height : "230px",}}>
-                <img className={style.img} src="/img/minjeongHome1.jpg"></img>
-                <h1>러브하우스 {i} </h1>
+                <img className={style.img} src={item.titleImg}></img>
+                <h1>{item.addr_detail} </h1>
               </SwiperSlide>
             );
           })}

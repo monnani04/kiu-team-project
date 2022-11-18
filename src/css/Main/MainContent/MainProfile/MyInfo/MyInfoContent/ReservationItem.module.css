@@ -1,3 +1,9 @@
+.wrap{
+    width : 350px;
+    position : relative;
+    left : 50%;
+    transform : translateX(-50%)
+}
 .block{
     height : 80px;
     display: flex;
@@ -6,7 +12,7 @@
 }
 
 .date{
-    padding : 30px;
+    padding-top : 30px;
     /* padding-top : 20px;
     padding-bottom: 20px; */
     font-size: medium;
@@ -15,8 +21,9 @@
 
 .button{
     position : relative;
-    left : 80%;
-    bottom : 50px;
+    left : 100%;
+    transform : translateX(-100%);
+    bottom : 30px;
     width : 40px;
     border-radius: 20px;
     font-size: 10px;

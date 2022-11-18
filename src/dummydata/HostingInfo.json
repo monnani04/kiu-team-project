@@ -17,7 +17,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/sungminHome.png"]
         },
         {
             "idx" : 0,
@@ -27,7 +27,7 @@
             "addr_num": "41934",
             "addr_street": "대구광역시 중구 남성로 23(남성로)",
             "addr_lot":"대구광역시 중구 남성로 50",
-            "addr_detail":"성민이의 러브 하우스",
+            "addr_detail":"희진이의 러브 하우스",
             "max_people":10,
             "bedroom":2,
             "bed":5,
@@ -36,7 +36,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/house2.png"]
         },
         {
             "idx" : 0,
@@ -46,7 +46,7 @@
             "addr_num": "41934",
             "addr_street": "대구광역시 중구 남성로 23(남성로)",
             "addr_lot":"대구광역시 중구 남성로 50",
-            "addr_detail":"성민이의 러브 하우스",
+            "addr_detail":"창표의 러브 하우스",
             "max_people":10,
             "bedroom":2,
             "bed":5,
@@ -55,7 +55,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/house3.png"]
         },
         {
             "idx" : 0,
@@ -65,7 +65,7 @@
             "addr_num": "41934",
             "addr_street": "대구광역시 중구 남성로 23(남성로)",
             "addr_lot":"대구광역시 중구 남성로 50",
-            "addr_detail":"성민이의 러브 하우스",
+            "addr_detail":"대한이의 러브 하우스",
             "max_people":10,
             "bedroom":2,
             "bed":5,
@@ -74,7 +74,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/house4.png"]
         },
         {
             "idx" : 0,
@@ -84,7 +84,7 @@
             "addr_num": "41934",
             "addr_street": "대구광역시 중구 남성로 23(남성로)",
             "addr_lot":"대구광역시 중구 남성로 50",
-            "addr_detail":"성민이의 러브 하우스",
+            "addr_detail":"한솔이의 러브 하우스",
             "max_people":10,
             "bedroom":2,
             "bed":5,
@@ -93,7 +93,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/house5.png"]
         },
         {
             "idx" : 0,
@@ -103,7 +103,7 @@
             "addr_num": "41934",
             "addr_street": "대구광역시 중구 남성로 23(남성로)",
             "addr_lot":"대구광역시 중구 남성로 50",
-            "addr_detail":"성민이의 러브 하우스",
+            "addr_detail":"윤하의 러브 하우스",
             "max_people":10,
             "bedroom":2,
             "bed":5,
@@ -112,7 +112,7 @@
             "rules":["체크인:오후 1:00 ~ 오후 10:00"],
             "lng":35.8674536201437,
             "lat":128.5850556036308,
-            "titleImg": ["sungminHome.png","house2.png","house3.png","house4.png","house5.png","house6.png"]
+            "titleImg": ["./img/house6.png"]
         }
     ]
 }
