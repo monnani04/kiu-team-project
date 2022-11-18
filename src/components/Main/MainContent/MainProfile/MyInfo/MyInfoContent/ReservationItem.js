@@ -3,6 +3,7 @@ import style from "../../../../../../css/Main/MainContent/MainProfile/MyInfo/MyI
 export default function ReservationItem(props) {
   return (
     <>
+    <div className={style.wrap}>
       <div className={style.block}>
         <h1 className={style.date}>{props.date}</h1>
         <button className={style.button}>취소</button>
@@ -24,6 +25,7 @@ export default function ReservationItem(props) {
             }}
           ></div>
         </div>
+      </div>
       </div>
     </>
   );
