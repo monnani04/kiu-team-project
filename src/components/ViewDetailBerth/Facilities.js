@@ -1,8 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
 import style from "../../css/ViewDetailBerth/ViewDetailBerthMain.module.css";
+
+import {
+  FacilitiesUIStateFunc,
+  FacilitiesUITopFunc,
+  FacilitiesUIDisplayFunc,
+  FacilitiesUIOpacityFunc,
+} from "../../store/modules/FacilitiesUIStateSlice";
 
 export default function Facilities(props) {
   // console.dir(props.info.facilities.find(item => item === "렌트 카"));
+  const dispatch = useDispatch();
   return (
     <>
       <div className={style.FacilitiesWrap}>
@@ -62,7 +71,19 @@ export default function Facilities(props) {
             </div>
           )}
         </div>
-        <div className={style.facilities_allBtn}>편의시설 모두 보기</div>
+        <div
+          className={style.facilities_allBtn}
+          onClick={() => {
+            dispatch(FacilitiesUIDisplayFunc("flex"));
+            setTimeout(() => {
+              dispatch(FacilitiesUIStateFunc(true));
+              dispatch(FacilitiesUITopFunc(0));
+              dispatch(FacilitiesUIOpacityFunc(0.5));
+            }, 100);
+          }}
+        >
+          편의시설 모두 보기
+        </div>
         <div></div>
       </div>
     </>
