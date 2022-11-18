@@ -1,4 +1,3 @@
-import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import style from "../../../../css/Main/MainContent/MainSearch/SearchDate.module.css";
@@ -7,6 +6,7 @@ import { DateRange } from 'react-date-range';
 import { useState } from "react";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
+import { ko } from "date-fns/locale";
 
 
 export default function SearchDate() { 
@@ -18,7 +18,7 @@ export default function SearchDate() {
         }
     ]);
     return(<>
-        <div className={style.wrap}>
+        <div>
             <div className={style.backBtn}>
                 <Link to={`/main/search`}>
                 <FontAwesomeIcon icon="fa-solid fa-chevron-left"  />
@@ -30,13 +30,15 @@ export default function SearchDate() {
             </div>
             <div className={style.datebox}>
                 <div>
-                    <span className={style.date}>날짜를 선택하세요.</span>
+                    <span className={style.date}>날짜를 선택하세요</span>
                     <DateRange
                         editableDateInputs={true}
                         onChange={(item) => setDate([item.selection])}
                         moveRangeOnFirstSelection={false}
                         ranges={date}
                         className={style.cal}
+                        locale={ko}
+                        style={{width:"auto", height:"auto"}}
                     />
                 </div>
             </div>
