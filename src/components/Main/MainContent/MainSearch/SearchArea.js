@@ -6,10 +6,15 @@ import LocalInfo from "../../../../dummydata/LocalInfo.json";
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef } from "react";
 
 export default function SearchArea(props) {
 
   const Local = LocalInfo.data;
+
+  // console.dir(Local);
+
+  const imgRef= useRef([]);
     
   return (
     <>
@@ -40,31 +45,31 @@ export default function SearchArea(props) {
               ></input>
             </div>
 
-            <div className={style.swiper}>
+            <div >
               <Swiper
-                slidesPerView={3}
+                slidesPerView={"auto"}
                 spaceBetween={30}
+                className={style.swiper}
                 >
                   {Local.map((item, i)=> {
+                    // console.dir(item)
                     return (
-                      <SwiperSlide key={i} className={style.swiperslide}>
-                        <div>{i}</div>
-                        
+                      <SwiperSlide key={i} className={style.swiperslide} style={{width : "120px"}}>
+                        <img ref={(el)=>imgRef.current[i]=el} className={style.img} src={item.localImg}
+                          onClick={(e)=>{
+                            // console.dir(imgRef.current);
+                            imgRef.current.map((item2, i2)=>{
+                              console.dir(item2)
+                              item2.style.border = "2px solid rgb(230, 230, 230)";
+                            })
+                            e.currentTarget.style.border = "2px solid rgb(150, 150, 150)";
+                          }}>
+                        </img>
+                        <div style={{fontSize:"15px", paddingTop:"5px"}}>{item.localname}</div>
                       </SwiperSlide>
 
                     )
                   })}
-
-
-                {/* <SwiperSlide className={style.swiperslide} style={{width : "110px", height : "110px"}}>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide> */}
               </Swiper>
             </div>
           </div>

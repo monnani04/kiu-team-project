@@ -14,6 +14,9 @@ import Report from "./Report";
 import TitleInfo from "./TitleInfo";
 import ViewDetailBerthSwiper from "./ViewDetailBerthSwiper";
 import WishBtn from "./WishBtn";
+import ReviewWrite from "./ReviewWrite";
+import FacilitiesView from "./FacilitiesView";
+import RulesView from "./RulesView";
 
 export default function ViewDetailBerthMain(props) {
   // console.log(props.state);
@@ -44,6 +47,9 @@ export default function ViewDetailBerthMain(props) {
 
       <Pay info={props.state} left={payLeft} setPayLeft={setPayLeft} />
       <LoginSlide />
+      <ReviewWrite info={props.state}/>
+      <FacilitiesView info={props.state}/>
+      <RulesView info={props.state}/>
     </>
   );
 }

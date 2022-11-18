@@ -4,9 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { useDispatch } from "react-redux";
+import {
+  ReviewUIStateFunc,
+  ReviewUITopFunc,
+  ReviewUIDisplayFunc,
+  ReviewUIOpacityFunc,
+} from "../../store/modules/ReviewUIStateSlice";
 
 export default function ReviewInfo(props) {
   const arr = [1, 2, 3, 4, 5];
+
+  const dispatch = useDispatch();
   return (
     <>
       <div className={style.ReviewInfoWrap}>
@@ -15,7 +24,14 @@ export default function ReviewInfo(props) {
             <FontAwesomeIcon icon="fa-solid fa-star" color="#ffb300" />{" "}
             {props.info.grade.toFixed(1)} 후기 ??개
           </div>
-          <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />
+          <FontAwesomeIcon icon="fa-solid fa-pen-to-square"  onClick={()=>{
+            dispatch(ReviewUIDisplayFunc("flex"));
+            setTimeout(() => {
+              dispatch(ReviewUIStateFunc(true));
+              dispatch(ReviewUITopFunc(0));
+              dispatch(ReviewUIOpacityFunc(0.5));
+            }, 100);
+          }}/>
         </div>
         <Swiper
           slidesPerView={"auto"}

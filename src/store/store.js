@@ -7,7 +7,9 @@ import SearchMapBtnReducer from "./modules/SearchMapBtnSlice";
 import latlngReducer from "./modules/latlngSlice";
 import myinfoReducer from "./modules/myinfoSlice";
 import authUIReducer from "./modules/authUIStateSlice";
-
+import ReviewUIReducer from "./modules/ReviewUIStateSlice";
+import FacilitiesUIReducer from "./modules/FacilitiesUIStateSlice";
+import RulesUIReducer from "./modules/RulesUIStateSlice";
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +19,10 @@ export const store = configureStore({
     SearchMapBtn: SearchMapBtnReducer,
     latlng:latlngReducer,
     myinfo:myinfoReducer,
-    authUI:authUIReducer
+    authUI:authUIReducer,
+    ReviewUI:ReviewUIReducer,
+    FacilitiesUI:FacilitiesUIReducer,
+    RulesUI:RulesUIReducer
   },
   middleware: [thunk]
 })

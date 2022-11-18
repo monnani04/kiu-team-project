@@ -348,12 +348,19 @@
     font-size: 30px;
     font-weight: bold;
 }
+.content_wrap{
+    display: flex;
+    align-items: center;
+}
 .rules_content{
     width: 100%;
+    height: 18px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     margin-top: 10px;
+    overflow: hidden;
 }
 .RulesInfoWrap > div:last-child{
     margin-top: 30px;
