@@ -1,0 +1,37 @@
+{
+    "data": [
+        {
+            "date": "2022-10-27",
+            "notice" : "민정이의 러브 하우스",
+            "content": "호스트 명 - 민정",
+            "days" : "2022-10-27 ~ 2022-11-03",
+            "people" : "성인 - 2명 아동 - 2명",
+            "localImg" : "/img/minjeongHome1.jpg"
+        },
+        {
+            "date": "2022-09-27",
+            "notice" : "창표의 비닐 하우스",
+            "content": "호스트 명 - 창표",
+            "days" : "2022-09-27 ~ 2022-10-03",
+            "people" : "성인 - 2명 아동 - 2명",
+            "localImg" : "/img/changHome.png"
+        },
+        {
+            "date": "2022-08-27",
+            "notice" : "성민이의 큐티 하우스",
+            "content": "호스트 명 - 성민",
+            "days" : "2022-10-27 ~ 2022-11-03",
+            "people" : "성인 - 2명 아동 - 2명",
+            "localImg" : "/img/Home2.jpg"
+        },
+        {
+            "date": "2022-11-18",
+            "notice" : "한솔이의 러브 하우스",
+            "content": "호스트 명 - 한솔",
+            "days" : "2022-11-27 ~ 2022-12-03",
+            "people" : "성인 - 2명 아동 - 2명",
+            "localImg" : "/img/Home3.jpg"
+        }
+        
+    ]
+}
