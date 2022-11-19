@@ -1,13 +1,10 @@
 import style from "../../../../css/Main/MainContent/MainProfile/Profile.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-import { Cookies } from "react-cookie";
 import axios from "axios";
 
 export default function Profile(props) {
   let navigate = useNavigate();
-
-  const cookies = new Cookies();
 
   return (
     <>

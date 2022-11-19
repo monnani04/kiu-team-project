@@ -12,7 +12,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   let params = {
-    email: String,
+    username: String,
     password: String,
   };
 
@@ -21,7 +21,7 @@ export default function Login() {
       <div className={style.wrap}>
         <h1>LAMAH</h1>
 
-        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="john3@gmail.com"/>
+        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="yunha@gmail.com"/>
 
         <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"/>
 
@@ -40,7 +40,7 @@ export default function Login() {
           className={style.button1}
           onClick={(e) => {
             e.preventDefault();
-            params.email = emailRef.current.value;
+            params.username = emailRef.current.value;
             params.password = passwordRef.current.value;
             // console.dir(params);
             axios({

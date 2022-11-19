@@ -7,7 +7,7 @@ export default function SearchLinkBox() {
   return (
     <>
       <div className={style.box}>
-        <Link to={'/SearchArea'}>
+        <Link to={'/Search'}>
           <div className={style.textGrp}>
             <div>여행 계획을 짜보세요!</div>
             <div>여행 장소 • 날짜 • 인원 수 선택</div>
