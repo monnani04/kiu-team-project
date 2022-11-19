@@ -109,7 +109,6 @@ export default function SearchNumber() {
                 </div>
               </div>
               <hr />
-              
             </div>
           </div>
         </div>
