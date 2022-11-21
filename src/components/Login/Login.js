@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import style from "../../css/Login/Login.module.css";
 
 export default function Login() {
-
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -12,18 +11,63 @@ export default function Login() {
   const navigate = useNavigate();
 
   let params = {
-    email: String,
+    username: String,
     password: String,
   };
+
+  function login(e) {
+    // e.preventDefault();
+    params.username = emailRef.current.value;
+    params.password = passwordRef.current.value;
+    // console.dir(params);
+    axios({
+      method: "post",
+      url: "/api/auth/login",
+      data: JSON.stringify(params),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        withCredentials: true,
+        crossDomain: true,
+        credentials: true,
+      },
+    })
+      .then((res) => {
+        console.dir(res);
+        navigate("/", {
+          state: {
+            nowPath: location.pathname,
+          },
+        });
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }
 
   return (
     <>
       <div className={style.wrap}>
         <h1>LAMAH</h1>
 
-        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="john3@gmail.com"/>
+        <input
+          ref={emailRef}
+          type="email"
+          placeholder="E-mail을 입력하세요"
+          defaultValue="minjeong@gmail.com"
+          onKeyUp={() => {
+            if (window.event.keyCode == 13) {
+              // 엔터키가 눌렸을 때 실행할 내용
+              login();
+            }
+          }}
+        />
 
-        <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"/>
+        <input
+          ref={passwordRef}
+          type="password"
+          placeholder="비밀번호를 입력하세요"
+          defaultValue="123456"
+        />
 
         <div className={style.CheckboxWrap}>
           <div>
@@ -36,37 +80,7 @@ export default function Login() {
           </div>
         </div>
 
-        <button
-          className={style.button1}
-          onClick={(e) => {
-            e.preventDefault();
-            params.email = emailRef.current.value;
-            params.password = passwordRef.current.value;
-            // console.dir(params);
-            axios({
-              method: "post",
-              url: "/api/auth/login",
-              data: JSON.stringify(params),
-              headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                withCredentials: true,
-                crossDomain: true,
-                credentials: true,
-              },
-            })
-              .then((res) => {
-                console.dir(res);
-                navigate("/", {
-                  state:{
-                    nowPath: location.pathname
-                  }
-                });
-              })
-              .catch((err) => {
-                console.dir(err);
-              });
-          }}
-        >
+        <button className={style.button1} onClick={login}>
           LAMAH E-mail 로 그 인
         </button>
         <button className={style.button2}>LAMAH 회 원 가 입</button>
