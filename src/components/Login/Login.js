@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import style from "../../css/Login/Login.module.css";
 
 export default function Login() {
-
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -12,7 +11,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   let params = {
-    username: String,
+    email: String,
     password: String,
   };
 
@@ -21,7 +20,7 @@ export default function Login() {
       <div className={style.wrap}>
         <h1>LAMAH</h1>
 
-        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="yunha@gmail.com"/>
+        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="john3@gmail.com"/>
 
         <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"/>
 
@@ -40,7 +39,7 @@ export default function Login() {
           className={style.button1}
           onClick={(e) => {
             e.preventDefault();
-            params.username = emailRef.current.value;
+            params.email = emailRef.current.value;
             params.password = passwordRef.current.value;
             // console.dir(params);
             axios({
@@ -66,7 +65,27 @@ export default function Login() {
                 console.dir(err);
               });
           }}
-        >
+        />
+
+        <input
+          ref={passwordRef}
+          type="password"
+          placeholder="비밀번호를 입력하세요"
+          defaultValue="123456"
+        />
+
+        <div className={style.CheckboxWrap}>
+          <div>
+            <input type="checkbox" className={style.checkbox1} />
+            E-mail 저장 &nbsp;&nbsp;
+          </div>
+          <div>
+            <input type="checkbox" />
+            자동 로그인
+          </div>
+        </div>
+
+        <button className={style.button1} onClick={login}>
           LAMAH E-mail 로 그 인
         </button>
         <button className={style.button2}>LAMAH 회 원 가 입</button>
