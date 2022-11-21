@@ -7,7 +7,7 @@ export default function TitleInfo(props) {
   return (
     <>
       <div className={style.titleWrap}>
-        <h1>{props.info.addr_detail}</h1>
+        <h1>{props.info.name}</h1>
         <div>
           <FontAwesomeIcon icon="fa-solid fa-star" color="#ffb300" />
           {grade} 후기 ??개

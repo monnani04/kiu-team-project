@@ -16,8 +16,6 @@ export default function Test() {
       .catch((err) => {
         setContent(err);
       });
-
-    
   }, []);
   return (
     <>

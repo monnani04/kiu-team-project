@@ -5,9 +5,28 @@ import berthList from "../../../../dummydata/BerthList.json";
 import BerthItem from "./BerthItem";
 import Draggable from "react-draggable";
 import { SearchMapBtnStateFunc } from "../../../../store/modules/SearchMapBtnSlice";
+import axios from "axios";
 
 export default function SearchBearthList() {
   // console.dir(berthList.data);
+
+  const [berthData,setBerthData] = useState();
+
+  useEffect(()=>{
+
+    axios.get("/api/hotels/")
+    .then((res)=>{
+      console.dir(res.data);
+      setBerthData(res.data);
+    })
+    .catch((err)=>{
+      console.dir(err);
+    })
+  },[])
+
+  useEffect(()=>{
+    // console.dir(berthData);
+  },[berthData])
 
   const SearchMapBtnState = useSelector((state) => {
     // return state.스토어에서가져오고자 하는 state이름 선택.value;
@@ -108,7 +127,7 @@ export default function SearchBearthList() {
       }, 500);
     } else if (SearchMapBtnState === 2) {
       controlledPosition.y = 0;
-      wrapRef.current.style.top = "calc(100% - 20px)";
+      wrapRef.current.style.top = "calc(100% - 50px)";
       wrapRef.current.style.paddingTop = "50px";
       wrapRef.current.style.position = "absolute";
       wrapRef.current.style.transition = "0.5s ease-in-out";
@@ -152,6 +171,7 @@ export default function SearchBearthList() {
       ? dispatch(SearchMapBtnStateFunc(true))
       : false;
   }, [state]);
+
   return (
     <>
       <Draggable
@@ -174,8 +194,8 @@ export default function SearchBearthList() {
           </div>
 
           <div ref={itemWrapRef} className={style.itemWrap}>
-            {berthList.data.map((item, i) => {
-              return <BerthItem key={i} positionY={controlledPosition.y} idx={i}/>;
+            {berthData === undefined ? false : berthData.map((item, i) => {
+              return <BerthItem key={i} positionY={controlledPosition.y} idx={i} berthData={berthData}/>;
             })}
           </div>
           {/* <div className={style.emptyItemWrap}>
