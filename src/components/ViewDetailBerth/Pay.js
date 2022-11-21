@@ -1,17 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import style from "../../css/ViewDetailBerth/Pay.module.css";
 import { navStateFunc } from "../../store/modules/mainNavSlice";
+import moment from "moment";
+import "moment/locale/ko";
 
 export default function Pay(props) {
   let navigate = useNavigate();
 
   // console.dir(props.info);
+  // console.dir(moment(moment().format("YYYY-MM-DD"),"YYYY-MM-DD").add(7, 'days').format("YYYY-MM-DD"));
 
-  const [startDate, setStartDate] = useState(new Date("2014/02/08"));
-  const [endDate, setEndDate] = useState(new Date("2014/02/10"));
+  const [startDate, setStartDate] = useState(moment().format("YYYY-MM-DD"));
+  const [endDate, setEndDate] = useState(moment(moment().format("YYYY-MM-DD"),"YYYY-MM-DD").add(7, 'days').format("YYYY-MM-DD"));
 
   const [applePay, setapplePay] = useState(false);
   const [samsungPay, setSamsungPay] = useState(false);
@@ -39,6 +43,19 @@ export default function Pay(props) {
   });
   // redux state 변경 함수
   const dispatch = useDispatch();
+
+  const [content, setContent] = useState(false);
+  useEffect(() => {
+    axios
+      .post("/api/users/userinfo")
+      .then((res) => {
+        // console.dir(res.data);
+        setContent(res.data);
+      })
+      .catch((err) => {
+        setContent(err);
+      });
+  }, []);
 
   return (
     <>
@@ -69,14 +86,15 @@ export default function Pay(props) {
         >
           <div className={style.payItem1}>
             <div>
-              <h4>{props.info.addr_detail}</h4>
+              <h4>{props.info.name}</h4>
               <div>호스트 명 - {props.info.hostName}</div>
-              <div>예약자 명 - LAMAH</div>
+              <div>예약자 명 - {content.nickname}</div>
             </div>
             <div
               style={{
                 backgroundImage: `url(../../img/${props.info.titleImg[0]})`,
                 backgroundSize: "cover",
+                backgroundPosition: "50%"
               }}
             ></div>
           </div>
@@ -91,16 +109,16 @@ export default function Pay(props) {
                     type="date"
                     id="startDate"
                     className={style.startDate}
-                    defaultValue="2022-12-12"
-                    readOnly
+                    defaultValue={startDate}
+                    disabled
                   />{" "}
                   ~{/* <label htmlFor="endDate">end: </label> */}
                   <input
                     type="date"
                     id="endDate"
                     className={style.endDate}
-                    defaultValue="2022-12-25"
-                    readOnly
+                    defaultValue={endDate}
+                    disabled
                   />
                 </div>
                 <div
@@ -110,11 +128,11 @@ export default function Pay(props) {
                   }}
                   onClick={(e) => {
                     e.currentTarget.innerText === "수정"
-                      ? ((e.currentTarget.previousSibling.childNodes[1].readOnly = false),
-                        (e.currentTarget.previousSibling.childNodes[4].readOnly = false),
+                      ? ((e.currentTarget.previousSibling.childNodes[1].disabled = false),
+                        (e.currentTarget.previousSibling.childNodes[4].disabled = false),
                         (e.currentTarget.innerText = "저장"))
-                      : ((e.currentTarget.previousSibling.childNodes[1].readOnly = true),
-                        (e.currentTarget.previousSibling.childNodes[4].readOnly = true),
+                      : ((e.currentTarget.previousSibling.childNodes[1].disabled = true),
+                        (e.currentTarget.previousSibling.childNodes[4].disabled = true),
                         (e.currentTarget.innerText = "수정"));
                   }}
                 >
@@ -228,8 +246,8 @@ export default function Pay(props) {
             <div className={style.payItem3_wrap}>
               <h4>요금 세부정보</h4>
               <div className={style.payItem3_box}>
-                <div>₩ 99,999 ✕ 13박</div>
-                <div>1,299,987 ₩</div>
+                <div>₩ {Number(props.info.price).toLocaleString("ko-KR")} ✕ 13박</div>
+                <div>{Number(props.info.price * 13).toLocaleString("ko-KR")} ₩</div>
               </div>
               <div className={style.payItem3_box}>
                 <div>청소비</div>
@@ -237,11 +255,11 @@ export default function Pay(props) {
               </div>
               <div className={style.payItem3_box}>
                 <div>서비스 수수료</div>
-                <div>30,099 ₩</div>
+                <div>30,000 ₩</div>
               </div>
               <div className={style.payItem3_box}>
                 <div>합계 ( USD )</div>
-                <div>1,337,086 ₩</div>
+                <div>{Number(props.info.price * 13 + 7000 + 30000).toLocaleString("ko-KR")} ₩</div>
               </div>
             </div>
           </div>
@@ -290,6 +308,8 @@ export default function Pay(props) {
                     PaySuccess.current.style.display = "flex";
                   }, 2000))
                 : (alert.current.style.display = "flex");
+
+              console.dir();
             }}
           >
             예약하기
