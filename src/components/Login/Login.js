@@ -11,68 +11,63 @@ export default function Login() {
   const navigate = useNavigate();
 
   let params = {
-    email: String,
+    username: String,
     password: String,
   };
+
+  function login(){
+    // e.preventDefault();
+    params.username = emailRef.current.value;
+    params.password = passwordRef.current.value;
+    // console.dir(params);
+    axios({
+      method: "post",
+      url: "/api/auth/login",
+      data: JSON.stringify(params),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        withCredentials: true,
+        crossDomain: true,
+        credentials: true,
+      },
+    })
+      .then((res) => {
+        console.dir(res);
+        navigate("/", {
+          state:{
+            nowPath: location.pathname
+          }
+        });
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }
 
   return (
     <>
       <div className={style.wrap}>
         <h1>LAMAH</h1>
 
-        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="john3@gmail.com"/>
+        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="minjeong@gmail.com"
+        onKeyUp={()=>{
+          if (window.event.keyCode == 13) {
+ 
+            // 엔터키가 눌렸을 때 실행할 내용
+            login();
+       }
+        }
+        }/>
 
-        <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"/>
-
-        <div className={style.CheckboxWrap}>
-          <div>
-            <input type="checkbox" className={style.checkbox1} />
-            E-mail 저장 &nbsp;&nbsp;
-          </div>
-          <div>
-            <input type="checkbox" />
-            자동 로그인
-          </div>
-        </div>
-
-        <button
-          className={style.button1}
-          onClick={(e) => {
-            e.preventDefault();
-            params.email = emailRef.current.value;
-            params.password = passwordRef.current.value;
-            // console.dir(params);
-            axios({
-              method: "post",
-              url: "/api/auth/login",
-              data: JSON.stringify(params),
-              headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                withCredentials: true,
-                crossDomain: true,
-                credentials: true,
-              },
-            })
-              .then((res) => {
-                console.dir(res);
-                navigate("/", {
-                  state:{
-                    nowPath: location.pathname
-                  }
-                });
-              })
-              .catch((err) => {
-                console.dir(err);
-              });
-          }}
-        />
-
-        <input
-          ref={passwordRef}
-          type="password"
-          placeholder="비밀번호를 입력하세요"
-          defaultValue="123456"
-        />
+        <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"
+        onKeyUp={()=>{
+          if (window.event.keyCode == 13) {
+ 
+            // 엔터키가 눌렸을 때 실행할 내용
+            login();
+       }
+        }
+        }/>
 
         <div className={style.CheckboxWrap}>
           <div>
