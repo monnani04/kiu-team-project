@@ -7,6 +7,8 @@ export default function ReservationItem(props) {
 
   return (
     <>
+        <div className={style.box0}></div>
+
       <div className={style.wrap}>
         {ReservationInformation.map((item, i)=>{
           return(<div key={i}>
