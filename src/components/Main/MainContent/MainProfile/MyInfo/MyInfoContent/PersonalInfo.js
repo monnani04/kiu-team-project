@@ -7,6 +7,7 @@ export default function PersonalInfo(){
     const emailInput = useRef();
 
     return (<>
+        <div className={style.box}></div>
         <div className={style.imgdiv}>
             <div className={style.imgback}>
                 <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
