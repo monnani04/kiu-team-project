@@ -5,7 +5,7 @@
 .list {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 350px;
     height: 80%;
     position: relative;    
     top: 50%;
