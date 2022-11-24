@@ -3,13 +3,14 @@ export default function RecentItem(props) {
     <>
       <div
         style={{
-          width: "165px",
+          width: "160px",
           height: "180px",
           backgroundColor: "white",
           marginBottom: "30px",
           borderRadius: "15px",
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
-          alignContent: "space-between"
+          alignContent: "space-between",
+          marginLeft:"15px"
         }}
       >
         <div style={{
