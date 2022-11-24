@@ -36,8 +36,11 @@ export default function BerthItem(props) {
 
   useEffect(() => {
     // console.dir(props.wishState.filter(word => word === props.berthData[props.idx]._id))
-    props.wishState.filter((word) => word === props.berthData[props.idx]._id)
-      .length === 0
+    props.wishState === undefined
+      ? false
+      : props.wishState.filter(
+          (word) => word === props.berthData[props.idx]._id
+        ).length === 0
       ? false
       : setColorState(true);
   }, []);
@@ -78,18 +81,24 @@ export default function BerthItem(props) {
           // console.dir(props.berthData[props.idx]._id);
         }}
       >
-        <FontAwesomeIcon
-          className={style.wishBtnItem1}
-          icon="fa-solid fa-heart"
-          color={color}
-          size="xl"
-        />
-        <FontAwesomeIcon
-          className={style.wishBtnItem2}
-          icon="fa-regular fa-heart"
-          color="rgb(255,255,255)"
-          size="xl"
-        />
+        {props.loginCheck === false ? (
+          false
+        ) : (
+          <>
+            <FontAwesomeIcon
+              className={style.wishBtnItem1}
+              icon="fa-solid fa-heart"
+              color={color}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              className={style.wishBtnItem2}
+              icon="fa-regular fa-heart"
+              color="rgb(255,255,255)"
+              size="xl"
+            />
+          </>
+        )}
       </div>
       <div
         className={style.wrap}

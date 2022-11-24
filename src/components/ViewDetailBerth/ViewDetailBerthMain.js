@@ -36,7 +36,7 @@ export default function ViewDetailBerthMain(props) {
     axios
     .post("/api/users/userinfo")
     .then((res)=>{
-      // console.dir(res.data.wishList);
+      console.dir(res.data.wishList);
       setWishState(res.data.wishList)
     })
     .catch((err)=>{
