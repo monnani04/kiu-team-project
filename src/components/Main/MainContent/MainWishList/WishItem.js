@@ -1,14 +1,38 @@
 import styles from "./ono.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function WishItem(props) {
-  console.dir(props.img);
+  console.dir(props.item);
   const [color, setColor] = useState("red");
+  const [deletee, setDeletee] = useState(false);
+
+  let navigate = useNavigate();
+
+  const wrap = useRef();
+  useEffect(() => {
+    deletee === true
+      ? ((wrap.current.style.opacity = 0),
+        setTimeout(() => {
+          wrap.current.style.display = "none";
+        }, 500),
+        axios
+          .put(`/api/users/unwishHotel/${props.item._id}`)
+          .then((res) => {
+            // console.dir(res);
+          })
+          .catch((err) => {
+            console.dir(err);
+          }))
+      : false;
+  }, [deletee]);
   return (
     <>
       <div
+        ref={wrap}
         style={{
           width: "160px",
           height: "180px",
@@ -17,7 +41,15 @@ export default function WishItem(props) {
           borderRadius: "15px",
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
           alignContent: "space-between",
-          marginLeft:"15px"
+          marginLeft: "15px",
+          position: "relative",
+          transition: "0.5s ease-in-out",
+          opacity: 1,
+        }}
+        onClick={() => {
+          navigate("/viewDetailBerth", {
+            state: props.item,
+          });
         }}
       >
         <div
@@ -35,7 +67,7 @@ export default function WishItem(props) {
             style={{
               width: "100%",
               height: "100%",
-              backgroundImage: `url(../../../../img/${props.img[0]})`,
+              backgroundImage: `url(../../../../img/${props.item.titleImg[0]})`,
               backgroundSize: "cover",
               borderRadius: "15px",
             }}
@@ -51,6 +83,9 @@ export default function WishItem(props) {
             icon="fa-regular fa-heart"
             color="rgb(255,255,255)"
             size="xl"
+            onClick={() => {
+              deletee === false ? setDeletee(true) : false;
+            }}
           />
         </div>
         <p
@@ -62,7 +97,7 @@ export default function WishItem(props) {
             fontSize: "12px",
           }}
         >
-          {props.name2}{" "}
+          {props.item.name2}{" "}
         </p>
         <p
           style={{
@@ -73,7 +108,7 @@ export default function WishItem(props) {
             top: "25px",
           }}
         >
-          {props.name}
+          {props.item.name}
         </p>
       </div>
     </>

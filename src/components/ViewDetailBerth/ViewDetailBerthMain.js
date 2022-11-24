@@ -17,9 +17,10 @@ import WishBtn from "./WishBtn";
 import ReviewWrite from "./ReviewWrite";
 import FacilitiesView from "./FacilitiesView";
 import RulesView from "./RulesView";
+import axios from "axios";
 
 export default function ViewDetailBerthMain(props) {
-  console.log(props.state);
+  // console.log(props.state);
   const ImgArr = props.state.titleImg;
   //   console.log(ImgArr);
   useEffect(() => {
@@ -29,13 +30,25 @@ export default function ViewDetailBerthMain(props) {
 
   const [payLeft, setPayLeft] = useState("100%");
 
-  
+  const [wishState, setWishState] = useState();
+
+  useEffect(()=>{
+    axios
+    .post("/api/users/userinfo")
+    .then((res)=>{
+      // console.dir(res.data.wishList);
+      setWishState(res.data.wishList)
+    })
+    .catch((err)=>{
+      console.dir(err)
+    })
+  },[])
   // const [thisWrapOverflow, setThisWrapOverflow] = useState();
   return (
     <>
       <div className={style.wrap}>
         <BackBtn />
-        <WishBtn />
+        {wishState === undefined ? false : <WishBtn wishState={wishState} info={props.state}/>}
         <ViewDetailBerthSwiper imgArr={ImgArr} />
         <TitleInfo info={props.state} />
         <HostInfo info={props.state} />
