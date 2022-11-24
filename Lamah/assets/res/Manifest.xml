@@ -12,7 +12,7 @@
         </update>
     </resource>
     <startpage>
-        <name>www/html/index.html</name>
+        <name>http://192.168.123.147:8050</name>
         <orient>default</orient>
         <orient-tablet>default</orient-tablet>
     </startpage>
@@ -43,6 +43,7 @@
         <socket/>
     </network>
     <application>
+
         <android>
             <hardwareaccelerated>n</hardwareaccelerated>
             <user-theme>n</user-theme>
