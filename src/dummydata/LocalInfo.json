@@ -2,30 +2,37 @@
     "data": [
         {
             "localname": "대구",
+            "localname_eng":"daegu",
             "localImg" : "/img/local/daegu.png"
         },
         {
             "localname": "서울",
+            "localname_eng":"seoul",
             "localImg" : "/img/local/seoul.png"
         },
         {
             "localname": "부산",
+            "localname_eng":"busan",
             "localImg" : "/img/local/busan.png"
         },
         {
             "localname": "구미",
+            "localname_eng":"gumi",
             "localImg" : "/img/local/gumi.png"
         },
         {
             "localname": "삼척",
+            "localname_eng":"samcheok",
             "localImg" : "/img/local/samcheok.png"
         },
         {
             "localname": "상주",
+            "localname_eng":"sangju",
             "localImg" : "/img/local/sangju.png"
         },
         {
             "localname": "울산",
+            "localname_eng":"ulsan",
             "localImg" : "/img/local/ulsan.png"
         }
     ]

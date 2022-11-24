@@ -8,38 +8,42 @@ export default function WishBtn(props) {
   const [colorState, setColorState] = useState(false);
 
   useEffect(() => {
-    props.wishState.filter((word) => word === props.info._id)
-      .length === 0
-      ? false
+    // props.wishState === undefined
+    //   ? false
+    //   :
+    props.wishState.filter((word) => word === props.info._id).length === 0
+      ? setColorState(false)
       : setColorState(true);
   }, []);
-  
+
   const [color, setColor] = useState("rgba(0,0,0,0.1)");
 
   // console.dir(props.wishState)
 
-  
-
   useEffect(() => {
-    colorState === false
-      ? (setColor("rgba(0,0,0,0.1)"),
-        axios
-          .put(`/api/users/unwishHotel/${props.info._id}`)
-          .then((res) => {
-            // console.dir(res);
-          })
-          .catch((err) => {
-            console.dir(err);
-          }))
-      : (setColor("red"),
-        axios
-          .put(`/api/users/wishHotel/${props.info._id}`)
-          .then((res) => {
-            // console.dir(res);
-          })
-          .catch((err) => {
-            console.dir(err);
-          }));
+    setTimeout(() => {
+      colorState === false
+        ? (setColor("rgba(0,0,0,0.1)"),
+          axios
+            .put(`/api/users/unwishHotel/${props.info._id}`)
+            .then((res) => {
+              // console.dir(res);
+            })
+            .catch((err) => {
+              console.dir(err);
+            }))
+        : colorState === true
+        ? (setColor("red"),
+          axios
+            .put(`/api/users/wishHotel/${props.info._id}`)
+            .then((res) => {
+              // console.dir(res);
+            })
+            .catch((err) => {
+              console.dir(err);
+            }))
+        : false;
+    }, 100);
   }, [colorState]);
 
   return (

@@ -27,7 +27,7 @@ export default function Search() {
   const imgRef = useRef([]);
 
   const [searchState, setSearchState] = useState();
-  const [searchClickState, setSearchClickState] = useState("대구");
+  const [searchClickState, setSearchClickState] = useState("daegu");
 
   useEffect(() => {
     // console.log(searchState);
@@ -234,7 +234,7 @@ export default function Search() {
                         className={style.img}
                         src={item.localImg}
                         onClick={(e) => {
-                          setSearchClickState(item.localname);
+                          setSearchClickState(item.localname_eng);
                           imgRef.current.map((item2, i2) => {
                             // console.dir(item2);
                             item2.style.border = "2px solid rgb(230, 230, 230)";

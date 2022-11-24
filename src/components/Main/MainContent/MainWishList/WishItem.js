@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function WishItem(props) {
-  console.dir(props.item);
+  // console.dir(props.item);
   const [color, setColor] = useState("red");
   const [deletee, setDeletee] = useState(false);
 
@@ -46,11 +46,7 @@ export default function WishItem(props) {
           transition: "0.5s ease-in-out",
           opacity: 1,
         }}
-        onClick={() => {
-          navigate("/viewDetailBerth", {
-            state: props.item,
-          });
-        }}
+        
       >
         <div
           style={{
@@ -70,6 +66,11 @@ export default function WishItem(props) {
               backgroundImage: `url(../../../../img/${props.item.titleImg[0]})`,
               backgroundSize: "cover",
               borderRadius: "15px",
+            }}
+            onClick={() => {
+              navigate("/viewDetailBerth", {
+                state: props.item,
+              });
             }}
           ></div>
           <FontAwesomeIcon

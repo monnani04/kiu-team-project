@@ -12,7 +12,7 @@
         </update>
     </resource>
     <startpage>
-        <name>http://192.168.123.147:8050</name>
+        <name>http://10.0.2.2:8050</name>
         <orient>default</orient>
         <orient-tablet>default</orient-tablet>
     </startpage>

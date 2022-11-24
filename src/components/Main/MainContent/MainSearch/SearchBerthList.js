@@ -10,37 +10,52 @@ import axios from "axios";
 export default function SearchBearthList() {
   // console.dir(berthList.data);
 
-  const [berthData,setBerthData] = useState();
+  const [berthData, setBerthData] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
+    // console.log(JSON.parse(sessionStorage.searchData).searchClickState)
+    if(sessionStorage.searchData === undefined){
+      axios
+      .get(`/api/hotels/`)
+      .then((res) => {
+        console.dir(res.data);
+        setBerthData(res.data);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+    } else{
+      axios
+      .get(`/api/hotels?city=${JSON.parse(sessionStorage.searchData).searchClickState}`)
+      .then((res) => {
+        console.dir(res.data);
+        setBerthData(res.data);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+    }
 
-    axios.get("/api/hotels/")
-    .then((res)=>{
-      // console.dir(res.data); 
-      setBerthData(res.data);
-    })
-    .catch((err)=>{
-      console.dir(err);
-    })
-  },[])
+    
+  }, []);
 
   const [wishState, setWishState] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .post("/api/users/userinfo")
-    .then((res)=>{
-      // console.dir(res.data.wishList);
-      setWishState(res.data.wishList)
-    })
-    .catch((err)=>{
-      console.dir(err)
-    })
-  },[])
+      .post("/api/users/userinfo")
+      .then((res) => {
+        // console.dir(res.data.wishList);
+        setWishState(res.data.wishList);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.dir(berthData);
-  },[berthData])
+  }, [berthData]);
 
   const SearchMapBtnState = useSelector((state) => {
     // return state.스토어에서가져오고자 하는 state이름 선택.value;
@@ -208,9 +223,35 @@ export default function SearchBearthList() {
           </div>
 
           <div ref={itemWrapRef} className={style.itemWrap}>
-            {berthData === undefined || wishState === undefined ? false : berthData.map((item, i) => {
+            {/* {berthData === undefined || wishState === undefined ? false : berthData.map((item, i) => {
               return <BerthItem key={i} positionY={controlledPosition.y} idx={i} berthData={berthData} wishState={wishState}/>;
-            })}
+            })} */}
+            {berthData === undefined
+              ? false
+              : wishState === undefined
+              ? berthData.map((item, i) => {
+                return (
+                  <BerthItem
+                    key={i}
+                    positionY={controlledPosition.y}
+                    idx={i}
+                    berthData={berthData}
+                    loginCheck={false}
+                  />
+                );
+              })
+              : berthData.map((item, i) => {
+                  return (
+                    <BerthItem
+                      key={i}
+                      positionY={controlledPosition.y}
+                      idx={i}
+                      berthData={berthData}
+                      wishState={wishState}
+                      loginCheck={true}
+                    />
+                  );
+                })}
           </div>
           {/* <div className={style.emptyItemWrap}>
             <BerthItem/>

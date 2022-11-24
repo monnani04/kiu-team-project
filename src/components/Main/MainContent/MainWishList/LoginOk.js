@@ -11,7 +11,7 @@ export default function LoginOk(props) {
     axios
       .get("/api/hotels/wish")
       .then((res) => {
-        // console.dir(res.data);
+        console.dir(res.data);
         setWishArr(res.data);
       })
       .catch((err) => {
@@ -23,18 +23,18 @@ export default function LoginOk(props) {
       <div>
         <h2 className={style.wish}>위시 리스트 </h2>
         <div className={style.list}>
-          {wishArr === undefined
-            ? false
-            : wishArr.map((item, i) => {
-                // console.dir(item.titleImg)
-                return (
-                  <WishItem
-                    key={i}
-                    item={item}
-                  />
-                );
-              })}
-          
+          {wishArr === undefined ? (
+            false
+          ) : wishArr.length === 0 ? (
+            (<>
+              <h1>찜 목록이 없습니다.</h1>
+            </>)
+          ) : (
+            wishArr.map((item, i) => {
+              // console.dir(item.titleImg)
+              return <WishItem key={i} item={item} />;
+            })
+          )}
         </div>
       </div>
     </>
