@@ -18,24 +18,29 @@ import berthList from "../../../../dummydata/BerthList.json";
 import axios from "axios";
 
 export default function BerthItem(props) {
+  useEffect(() => {
+    // console.dir(props.berthData[props.idx]._id);
+    // console.dir(props.wishState);
+  }, []);
 
-  useEffect(()=>{
-    // console.dir(props.berthData[props.idx])
-  },[])
-  
-
-  const ImgArr =props.berthData[props.idx].titleImg;
-  const name1 =props.berthData[props.idx].title;
-  const name2 =props.berthData[props.idx].name2;
+  const ImgArr = props.berthData[props.idx].titleImg;
+  const name1 = props.berthData[props.idx].title;
+  const name2 = props.berthData[props.idx].name2;
   // const starImg =props.berthData[props.idx].starImg;
-  const grade =props.berthData[props.idx].grade.toFixed(1);
-  const date1 ="10월 28일";
-  const date2 ="11월 7일";
+  const grade = props.berthData[props.idx].grade.toFixed(1);
+  const date1 = "10월 28일";
+  const date2 = "11월 7일";
   const price =
-    "₩" +
-    props.berthData[props.idx].price.toLocaleString("ko-KR") +
-    " / 박";
+    "₩" + props.berthData[props.idx].price.toLocaleString("ko-KR") + " / 박";
   const [colorState, setColorState] = useState(false);
+
+  useEffect(() => {
+    // console.dir(props.wishState.filter(word => word === props.berthData[props.idx]._id))
+    props.wishState.filter((word) => word === props.berthData[props.idx]._id)
+      .length === 0
+      ? false
+      : setColorState(true);
+  }, []);
   const [color, setColor] = useState("rgba(0,0,0,0.1)");
   // path 재설정 함수
   let navigate = useNavigate();
@@ -43,10 +48,26 @@ export default function BerthItem(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    colorState === false ? setColor("rgba(0,0,0,0.1)") : setColor("red");
+    colorState === false
+      ? (setColor("rgba(0,0,0,0.1)"),
+        axios
+          .put(`/api/users/unwishHotel/${props.berthData[props.idx]._id}`)
+          .then((res) => {
+            console.dir(res);
+          })
+          .catch((err) => {
+            console.dir(err);
+          }))
+      : (setColor("red"),
+        axios
+          .put(`/api/users/wishHotel/${props.berthData[props.idx]._id}`)
+          .then((res) => {
+            console.dir(res);
+          })
+          .catch((err) => {
+            console.dir(err);
+          }));
   }, [colorState]);
-
-  
 
   return (
     <>
@@ -54,6 +75,7 @@ export default function BerthItem(props) {
         className={style.wishBtn}
         onClick={() => {
           colorState === false ? setColorState(true) : setColorState(false);
+          console.dir(props.berthData[props.idx]._id);
         }}
       >
         <FontAwesomeIcon
@@ -73,34 +95,34 @@ export default function BerthItem(props) {
         className={style.wrap}
         onClick={() => {
           navigate("/viewDetailBerth", {
-            state: props.berthData[props.idx]
+            state: props.berthData[props.idx],
             // {
-              // id:props.berthData[props.idx].id,
-              // titleImg:props.berthData[props.idx].titleImg,
-              // starImg:props.berthData[props.idx].starImg,
-              // grade:props.berthData[props.idx].grade,
-              // name:props.berthData[props.idx].name,
-              // name2:props.berthData[props.idx].name2,
-              // date1:props.berthData[props.idx].date1,
-              // date2:props.berthData[props.idx].date2,
-              // price:props.berthData[props.idx].price,
-              // type:props.berthData[props.idx].type,
-              // addr_num:props.berthData[props.idx].addr_num,
-              // addr_street:props.berthData[props.idx].addr_street,
-              // addr_lot:props.berthData[props.idx].addr_lot,
-              // addr_detail:props.berthData[props.idx].addr_detail,
-              // max_people:props.berthData[props.idx].max_people,
-              // bedroom:props.berthData[props.idx].bedroom,
-              // bed:props.berthData[props.idx].bed,
-              // bathroom:props.berthData[props.idx].bathroom,
-              // facilities:props.berthData[props.idx].facilities,
-              // rules:props.berthData[props.idx].rules,
-              // lng:props.berthData[props.idx].lng,
-              // lat:props.berthData[props.idx].lat,
-              // hostID:props.berthData[props.idx].hostID,
-              // hostName:props.berthData[props.idx].hostName,
-              // hostImg:props.berthData[props.idx].hostImg,
-              // title: props.berthData[props.idx].title,
+            // id:props.berthData[props.idx].id,
+            // titleImg:props.berthData[props.idx].titleImg,
+            // starImg:props.berthData[props.idx].starImg,
+            // grade:props.berthData[props.idx].grade,
+            // name:props.berthData[props.idx].name,
+            // name2:props.berthData[props.idx].name2,
+            // date1:props.berthData[props.idx].date1,
+            // date2:props.berthData[props.idx].date2,
+            // price:props.berthData[props.idx].price,
+            // type:props.berthData[props.idx].type,
+            // addr_num:props.berthData[props.idx].addr_num,
+            // addr_street:props.berthData[props.idx].addr_street,
+            // addr_lot:props.berthData[props.idx].addr_lot,
+            // addr_detail:props.berthData[props.idx].addr_detail,
+            // max_people:props.berthData[props.idx].max_people,
+            // bedroom:props.berthData[props.idx].bedroom,
+            // bed:props.berthData[props.idx].bed,
+            // bathroom:props.berthData[props.idx].bathroom,
+            // facilities:props.berthData[props.idx].facilities,
+            // rules:props.berthData[props.idx].rules,
+            // lng:props.berthData[props.idx].lng,
+            // lat:props.berthData[props.idx].lat,
+            // hostID:props.berthData[props.idx].hostID,
+            // hostName:props.berthData[props.idx].hostName,
+            // hostImg:props.berthData[props.idx].hostImg,
+            // title: props.berthData[props.idx].title,
             // },
           });
 
@@ -129,8 +151,8 @@ export default function BerthItem(props) {
                 className={style.itemImg}
                 style={{
                   backgroundImage: `url(../../../../img/${item})`,
-                  backgroundSize:"cover",
-                  backgroundPosition:"50%"
+                  backgroundSize: "cover",
+                  backgroundPosition: "50%",
                 }}
                 // loading="lazy"
               ></SwiperSlide>
@@ -148,7 +170,11 @@ export default function BerthItem(props) {
           </div>
 
           <div className={style.starWrap}>
-            <FontAwesomeIcon icon="fa-solid fa-star" color="#FFAF0E" size="xl"/>
+            <FontAwesomeIcon
+              icon="fa-solid fa-star"
+              color="#FFAF0E"
+              size="xl"
+            />
             <div className={style.grade}>&nbsp;{grade}</div>
           </div>
         </div>

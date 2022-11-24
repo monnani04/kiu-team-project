@@ -19,7 +19,7 @@ import FacilitiesView from "./FacilitiesView";
 import RulesView from "./RulesView";
 
 export default function ViewDetailBerthMain(props) {
-  // console.log(props.state);
+  console.log(props.state);
   const ImgArr = props.state.titleImg;
   //   console.log(ImgArr);
   useEffect(() => {
@@ -28,6 +28,8 @@ export default function ViewDetailBerthMain(props) {
   }, []);
 
   const [payLeft, setPayLeft] = useState("100%");
+
+  
   // const [thisWrapOverflow, setThisWrapOverflow] = useState();
   return (
     <>

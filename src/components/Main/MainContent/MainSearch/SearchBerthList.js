@@ -16,11 +16,25 @@ export default function SearchBearthList() {
 
     axios.get("/api/hotels/")
     .then((res)=>{
-      console.dir(res.data);
+      // console.dir(res.data); 
       setBerthData(res.data);
     })
     .catch((err)=>{
       console.dir(err);
+    })
+  },[])
+
+  const [wishState, setWishState] = useState();
+
+  useEffect(()=>{
+    axios
+    .post("/api/users/userinfo")
+    .then((res)=>{
+      // console.dir(res.data.wishList);
+      setWishState(res.data.wishList)
+    })
+    .catch((err)=>{
+      console.dir(err)
     })
   },[])
 
@@ -194,8 +208,8 @@ export default function SearchBearthList() {
           </div>
 
           <div ref={itemWrapRef} className={style.itemWrap}>
-            {berthData === undefined ? false : berthData.map((item, i) => {
-              return <BerthItem key={i} positionY={controlledPosition.y} idx={i} berthData={berthData}/>;
+            {berthData === undefined || wishState === undefined ? false : berthData.map((item, i) => {
+              return <BerthItem key={i} positionY={controlledPosition.y} idx={i} berthData={berthData} wishState={wishState}/>;
             })}
           </div>
           {/* <div className={style.emptyItemWrap}>
