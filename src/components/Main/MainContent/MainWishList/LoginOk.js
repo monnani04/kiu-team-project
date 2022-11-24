@@ -30,18 +30,11 @@ export default function LoginOk(props) {
                 return (
                   <WishItem
                     key={i}
-                    name={item.name}
-                    name2={item.name2}
-                    img={item.titleImg}
+                    item={item}
                   />
                 );
               })}
-          {/* <WishItem title="성민이의 러브 하우스1" />
-          <WishItem title="성민이의 러브 하우스2" />
-          <WishItem title="성민이의 러브 하우스3" />
-          <WishItem title="성민이의 러브 하우스4" />
-          <WishItem title="성민이의 러브 하우스5" />
-          <WishItem title="성민이의 러브 하우스6" /> */}
+          
         </div>
       </div>
     </>

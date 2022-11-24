@@ -53,7 +53,7 @@ export default function BerthItem(props) {
         axios
           .put(`/api/users/unwishHotel/${props.berthData[props.idx]._id}`)
           .then((res) => {
-            console.dir(res);
+            // console.dir(res);
           })
           .catch((err) => {
             console.dir(err);
@@ -62,7 +62,7 @@ export default function BerthItem(props) {
         axios
           .put(`/api/users/wishHotel/${props.berthData[props.idx]._id}`)
           .then((res) => {
-            console.dir(res);
+            // console.dir(res);
           })
           .catch((err) => {
             console.dir(err);
@@ -75,7 +75,7 @@ export default function BerthItem(props) {
         className={style.wishBtn}
         onClick={() => {
           colorState === false ? setColorState(true) : setColorState(false);
-          console.dir(props.berthData[props.idx]._id);
+          // console.dir(props.berthData[props.idx]._id);
         }}
       >
         <FontAwesomeIcon
@@ -96,34 +96,6 @@ export default function BerthItem(props) {
         onClick={() => {
           navigate("/viewDetailBerth", {
             state: props.berthData[props.idx],
-            // {
-            // id:props.berthData[props.idx].id,
-            // titleImg:props.berthData[props.idx].titleImg,
-            // starImg:props.berthData[props.idx].starImg,
-            // grade:props.berthData[props.idx].grade,
-            // name:props.berthData[props.idx].name,
-            // name2:props.berthData[props.idx].name2,
-            // date1:props.berthData[props.idx].date1,
-            // date2:props.berthData[props.idx].date2,
-            // price:props.berthData[props.idx].price,
-            // type:props.berthData[props.idx].type,
-            // addr_num:props.berthData[props.idx].addr_num,
-            // addr_street:props.berthData[props.idx].addr_street,
-            // addr_lot:props.berthData[props.idx].addr_lot,
-            // addr_detail:props.berthData[props.idx].addr_detail,
-            // max_people:props.berthData[props.idx].max_people,
-            // bedroom:props.berthData[props.idx].bedroom,
-            // bed:props.berthData[props.idx].bed,
-            // bathroom:props.berthData[props.idx].bathroom,
-            // facilities:props.berthData[props.idx].facilities,
-            // rules:props.berthData[props.idx].rules,
-            // lng:props.berthData[props.idx].lng,
-            // lat:props.berthData[props.idx].lat,
-            // hostID:props.berthData[props.idx].hostID,
-            // hostName:props.berthData[props.idx].hostName,
-            // hostImg:props.berthData[props.idx].hostImg,
-            // title: props.berthData[props.idx].title,
-            // },
           });
 
           dispatch(authUIStateFunc(false));
