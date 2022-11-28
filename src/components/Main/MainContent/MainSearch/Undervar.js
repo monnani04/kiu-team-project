@@ -24,11 +24,11 @@ export default function Underbar(props) {
           <div
             style={{ fontSize: "15px" }}
             onClick={() => {
-              props.setSearchClickState("대구");
+              props.setSearchClickState("daegu");
               props.setDate([
                 {
                   startDate: new Date(),
-                  endDate: new Date(),
+                  endDate: new Date(new Date().getTime() + 86400000),
                   key: "selection",
                 },
               ]);
@@ -37,6 +37,10 @@ export default function Underbar(props) {
                 children: 0,
                 room: 0,
               });
+              // const date1 = new Date(JSON.parse(JSON.stringify(props.date)).endDate);
+              // const date2 = new Date(JSON.parse(JSON.stringify(props.date)).startDate);
+              // console.log("date1 : " + date1);
+              // console.log("date2 : " + date2);
             }}
           >
             초기화

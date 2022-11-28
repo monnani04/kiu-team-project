@@ -2,9 +2,24 @@ import style from "../../../../css/Main/MainContent/MainProfile/Profile.module.c
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Profile(props) {
   let navigate = useNavigate();
+
+  const [nickName, setNickName] = useState();
+
+  useEffect(() => {
+    axios
+      .post("/api/users/userinfo")
+      .then((res) => {
+        // console.dir(res.data);
+        setNickName(res.data.nickname);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }, []);
 
   return (
     <>
@@ -22,7 +37,7 @@ export default function Profile(props) {
               <img className={style.img} src="/img/icon/LAMAH3.svg"></img>
             </div>
             <div style={{ display: "inline-block", padding: "10px" }}>
-              라마 관리자
+              {nickName}
               <div className={style.stitle}>프로필 보기</div>
             </div>
           </div>

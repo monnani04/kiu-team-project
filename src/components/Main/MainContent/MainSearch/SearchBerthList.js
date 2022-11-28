@@ -18,7 +18,7 @@ export default function SearchBearthList() {
       axios
       .get(`/api/hotels/`)
       .then((res) => {
-        console.dir(res.data);
+        // console.dir(res.data);
         setBerthData(res.data);
       })
       .catch((err) => {

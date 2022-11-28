@@ -26,6 +26,7 @@ export default function ViewDetailBerthMain(props) {
   useEffect(() => {
     document.body.style.overflow = "auto";
     window.scrollTo({ top: 0, behavior: "auto" });
+    
   }, []);
 
   const [payLeft, setPayLeft] = useState("100%");
@@ -36,7 +37,7 @@ export default function ViewDetailBerthMain(props) {
     axios
     .post("/api/users/userinfo")
     .then((res)=>{
-      console.dir(res.data.wishList);
+      // console.dir(res.data.wishList);
       setWishState(res.data.wishList)
     })
     .catch((err)=>{

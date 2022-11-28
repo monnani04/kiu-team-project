@@ -6,7 +6,9 @@ import Reservation from "./MainHome/Reservation";
 
 export default function MainHome() {
   const [auth, setAuth] = useState();
-  const [reserve, setReserve] = useState(true);
+  const [reserve, setReserve] = useState();
+
+  const [reserveData, setReserveData] = useState();
 
   useEffect(() => {
     document.body.style.overflow = "auto";
@@ -19,6 +21,17 @@ export default function MainHome() {
         // console.dir(err);
         setAuth(false);
       });
+
+    axios
+      .get("/api/reservations")
+      .then((res) => {
+        // console.dir(res.data);
+        setReserveData(res.data);
+        res.data.length === 0 ? setReserve(false) : setReserve(true);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
   }, []);
   return (
     <>
@@ -26,10 +39,12 @@ export default function MainHome() {
         {auth === false ? (
           <NotLogin />
         ) : auth === true ? (
-          reserve === false ? (
+          reserve === undefined ? (
+            false
+          ) : reserve === false ? (
             <Home />
           ) : (
-            <Reservation />
+            <Reservation reserveData={reserveData}/>
           )
         ) : (
           false
