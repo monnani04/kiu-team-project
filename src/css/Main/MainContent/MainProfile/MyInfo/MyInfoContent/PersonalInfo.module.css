@@ -1,6 +1,11 @@
+.box{
+    width : 100px;
+    height : 30px;
+}
 .imgdiv{
     display: flex;
     justify-content: center;
+    /* margin : 30px; */
     padding : 40px;
 }
 .imgback{
