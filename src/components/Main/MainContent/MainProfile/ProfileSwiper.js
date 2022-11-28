@@ -6,7 +6,7 @@ import HostingInfo from "../../../../dummydata/HostingInfo.json";
 
 export default function ProfileSwiper() {
   const HosingInfo = HostingInfo.data;
-  console.dir(HosingInfo);
+  // console.dir(HosingInfo);
   return (
     <>
       <div className={style.profileswiper}>

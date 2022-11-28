@@ -81,7 +81,7 @@ export default function Search() {
   const [date, setDate] = useState([
     {
       startDate: new Date(),
-      endDate: new Date(),
+      endDate: new Date(new Date().getTime() + 86400000),
       key: "selection",
     },
   ]);

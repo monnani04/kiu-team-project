@@ -20,15 +20,37 @@ import Profile from "./components/Main/MainContent/MainProfile/Profile";
 import MyInfoContent from "./routes/MyInfoContent";
 import Intro from "./routes/Intro";
 import Test from "./routes/Test";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SearchArea from "./components/Main/MainContent/MainSearch/SearchArea";
 import SearchDate from "./components/Main/MainContent/MainSearch/SearchDate";
 import SearchNumber from "./components/Main/MainContent/MainSearch/SearchNumber";
 import Search from "./components/Main/MainContent/MainSearch/Search";
 
 function App() {
+  // const [toggle, setToggle] = useState(false);
+
+  // useEffect(() => {
+  //   toggle === false
+  //     ? (document.querySelector("html").style.filter = "invert(100%)")
+  //     : (document.querySelector("html").style.filter = "invert(0%)");
+  // }, [toggle]);
+
   return (
     <>
+      {/* <button
+        style={{
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          zIndex: "99999999",
+        }}
+        onClick={() => {
+          toggle === false ? setToggle(true) : setToggle(false);
+        }}
+      >
+        toggle
+      </button> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Intro />} />
@@ -48,7 +70,6 @@ function App() {
           <Route path="/viewdetailberth" element={<ViewDetailBerth />} />
 
           <Route path="/myinfocontent/*" element={<MyInfoContent />} />
-
         </Routes>
       </BrowserRouter>
     </>

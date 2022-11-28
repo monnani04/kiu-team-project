@@ -18,21 +18,41 @@ import berthList from "../../../../dummydata/BerthList.json";
 import axios from "axios";
 
 export default function BerthItem(props) {
-  useEffect(() => {
-    // console.dir(props.berthData[props.idx]._id);
-    // console.dir(props.wishState);
-  }, []);
+  useEffect(() => {}, []);
 
   const ImgArr = props.berthData[props.idx].titleImg;
   const name1 = props.berthData[props.idx].title;
   const name2 = props.berthData[props.idx].name2;
   // const starImg =props.berthData[props.idx].starImg;
   const grade = props.berthData[props.idx].grade.toFixed(1);
-  const date1 = "10월 28일";
-  const date2 = "11월 7일";
+  const [date1, setDate1] = useState(
+    sessionStorage.searchData === undefined
+      ? new Date()
+      : new Date(JSON.parse(sessionStorage.searchData).date.startDate)
+  );
+  const [date2, setDate2] = useState(
+    sessionStorage.searchData === undefined
+      ? new Date(new Date().getTime() + 86400000)
+      : new Date(JSON.parse(sessionStorage.searchData).date.endDate)
+  );
+
+  const [date1Year, setDate1Year] = useState(date1.getFullYear());
+  const [date1Month, setDate1Monthr] = useState(date1.getMonth() + 1);
+  const [date1Date, setDate1Date] = useState(date1.getDate());
+
+  const [date2Year, setDate2Year] = useState(date2.getFullYear());
+  const [date2Month, setDate2Monthr] = useState(date2.getMonth() + 1);
+  const [date2Date, setDate2Date] = useState(date2.getDate());
+
+  useEffect(() => {
+    // console.dir(props.berthData[props.idx].price)
+  }, []);
+
   const price =
     "₩" + props.berthData[props.idx].price.toLocaleString("ko-KR") + " / 박";
-  const [colorState, setColorState] = useState(false);
+
+  const [colorState, setColorState] = useState();
+  const [wishAdd, setWishAdd] = useState();
 
   useEffect(() => {
     // console.dir(props.wishState.filter(word => word === props.berthData[props.idx]._id))
@@ -41,7 +61,7 @@ export default function BerthItem(props) {
       : props.wishState.filter(
           (word) => word === props.berthData[props.idx]._id
         ).length === 0
-      ? false
+      ? setColorState(false)
       : setColorState(true);
   }, []);
   const [color, setColor] = useState("rgba(0,0,0,0.1)");
@@ -51,34 +71,61 @@ export default function BerthItem(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    colorState === false
-      ? (setColor("rgba(0,0,0,0.1)"),
-        axios
-          .put(`/api/users/unwishHotel/${props.berthData[props.idx]._id}`)
-          .then((res) => {
-            // console.dir(res);
-          })
-          .catch((err) => {
-            console.dir(err);
-          }))
-      : (setColor("red"),
-        axios
-          .put(`/api/users/wishHotel/${props.berthData[props.idx]._id}`)
-          .then((res) => {
-            // console.dir(res);
-          })
-          .catch((err) => {
-            console.dir(err);
-          }));
+    colorState === undefined
+      ? false
+      : colorState === false
+      ? setColor("rgba(0,0,0,0.1)")
+      : // axios
+        //   .put(`/api/users/unwishHotel/${props.berthData[props.idx]._id}`)
+        //   .then((res) => {
+        //     // console.dir(res);
+        //   })
+        //   .catch((err) => {
+        //     console.dir(err);
+        //   })
+        setColor("red");
+        // axios
+        //   .put(`/api/users/wishHotel/${props.berthData[props.idx]._id}`)
+        //   .then((res) => {
+        //     // console.dir(res);
+        //   })
+        //   .catch((err) => {
+        //     console.dir(err);
+        //   })
   }, [colorState]);
+
+  useEffect(()=>{
+    wishAdd === undefined 
+    ? false
+    : wishAdd === false 
+      ? axios
+        .put(`/api/users/unwishHotel/${props.berthData[props.idx]._id}`)
+        .then((res) => {
+          // console.dir(res);
+        })
+        .catch((err) => {
+          console.dir(err);
+        }) 
+      : axios
+        .put(`/api/users/wishHotel/${props.berthData[props.idx]._id}`)
+        .then((res) => {
+          // console.dir(res);
+        })
+        .catch((err) => {
+          console.dir(err);
+        })
+  },[wishAdd])
 
   return (
     <>
       <div
         className={style.wishBtn}
         onClick={() => {
-          colorState === false ? setColorState(true) : setColorState(false);
-          // console.dir(props.berthData[props.idx]._id);
+          colorState === undefined
+          ? false 
+          : colorState === false 
+            ? (setColorState(true),setWishAdd(true))
+            : (setColorState(false),setWishAdd(false))
         }}
       >
         {props.loginCheck === false ? (
@@ -145,7 +192,7 @@ export default function BerthItem(props) {
             <div className={style.name2}>{name2}</div>
             <div className={style.name1}>{name1}</div>
             <div className={style.date}>
-              {date1} ~ {date2}
+              {date1Month}월 {date1Date}일 ~ {date2Month}월 {date2Date}일
             </div>
             <div className={style.price}>{price}</div>
           </div>

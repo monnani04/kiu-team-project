@@ -3,9 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProfileSwiper from "../components/Main/MainContent/MainProfile/ProfileSwiper";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function MyProfile() {
   let navigate = useNavigate();
+
+  const [nickName, setNickName] = useState();
+
+  useEffect(() => {
+    axios
+      .post("/api/users/userinfo")
+      .then((res) => {
+        // console.dir(res.data);
+        setNickName(res.data.nickname);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }, []);
 
   return (
     <>
@@ -41,7 +57,7 @@ export default function MyProfile() {
             </div>
           </div>
 
-          <h2 className={style.myprofile_h2}>안녕하세요. 라마 관리자입니다.</h2>
+          <h2 className={style.myprofile_h2}>{nickName === undefined ? false :`안녕하세요. ${nickName}입니다.`}</h2>
 
           <h3 className={style.myprofile_h3}>보유중인 호스팅 정보</h3>
 

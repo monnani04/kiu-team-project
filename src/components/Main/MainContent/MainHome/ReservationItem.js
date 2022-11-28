@@ -1,16 +1,38 @@
+import axios from "axios";
+import moment from "moment/moment";
+import { useEffect, useState } from "react";
+
 export default function ReservationItem(props) {
+
+  const [hotelData, setHotelData] = useState();
+
+  useEffect(()=>{
+    // console.dir(props.reserveData);
+    axios
+    .get(`/api/hotels/find/${props.reserveData.hotelId}`)
+    .then((res)=>{
+      // console.dir(res.data);
+      setHotelData(res.data);
+    })
+    .catch((err)=>{
+      console.dir(err);
+    })
+  },[])
+
   return (
     <>
       <p
         style={{
           position: "relative",
-          bottom: "100px",
+          // bottom: "100px",
           left: "14px",
           fontWeight: "bold",
           fontSize: "15px",
+          // marginTop: "50px",
+          marginBottom:"15px"
         }}
       >
-        {props.date}
+        {moment(props.reserveData.createdAt).format("YYYY-MM-DD")}
       </p>
       <div
         style={{
@@ -22,20 +44,22 @@ export default function ReservationItem(props) {
           boxShadow: "0 3px 6px rgba(0,0,0,0.16)",
           top: "10%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, 0%)",
           position: "relative",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
-          padding: "0 10px 0 20px",
+          padding: "10px 10px 10px 20px",
           boxSizing: "border-box",
         }}
       >
         <div
           style={{
             width: "320px",
+            height:"100%",
             display: "flex",
             flexDirection: "column",
+            justifyContent:"space-around"
           }}
         >
           <p
@@ -46,7 +70,7 @@ export default function ReservationItem(props) {
               marginBottom: "5px",
             }}
           >
-            {props.notice}
+            {hotelData === undefined ? "" : hotelData.name}
           </p>
           <p
             style={{
@@ -55,7 +79,7 @@ export default function ReservationItem(props) {
               marginBottom: "5px",
             }}
           >
-            {props.content}
+            호스트 명 - {hotelData === undefined ? "" : hotelData.hostName}
           </p>
           <p
             style={{
@@ -64,7 +88,7 @@ export default function ReservationItem(props) {
               marginBottom: "5px",
             }}
           >
-            {props.days}
+            {moment(props.reserveData.startDate).format("YYYY-MM-DD")} ~ {moment(props.reserveData.endDate).format("YYYY-MM-DD")}
           </p>
           <p
             style={{
@@ -72,7 +96,7 @@ export default function ReservationItem(props) {
               fontSize: "13px",
             }}
           >
-            {props.people}
+            성인 - {props.reserveData.adult}명 아동 - {props.reserveData.children}명
           </p>
         </div>
 
@@ -91,13 +115,16 @@ export default function ReservationItem(props) {
               top: "50%",
               left: "0%",
               transform: "translate(-50%, -50%)",
-              width: "90px",
-              height: "110px",
-              background: "url(../../../../img/sungminHome.png)",
+              width: "110px",
+              height: "130px",
+              backgroundImage: `url(../../../../img/${hotelData === undefined ? "" : hotelData.titleImg[0]})`,
+              backgroundPosition:"50%, 0",
+              backgroundRepeat:"no-repeat",
               backgroundSize: "cover",
               borderRadius: "15px",
             }}
           ></div>
+          {/* {console.log(hotelData)} */}
         </div>
       </div>
     </>
