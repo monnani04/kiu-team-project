@@ -24,7 +24,7 @@ export default function ReservationItem(props) {
       <p
         style={{
           position: "relative",
-          bottom: "100px",
+          top:"0",
           left: "14px",
           fontWeight: "bold",
           fontSize: "15px",

@@ -102,6 +102,7 @@ export default function Notice(props) {
               className={style.delete}
               onClick={() => {
                 noAlarm.current.style.display = "flex";
+                alarmWindow.current.style.display = "none";
                 axios
                   .put("/api/reservations/alarmAll/false")
                   .then((res) => {
