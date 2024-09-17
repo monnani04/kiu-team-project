@@ -1,0 +1,22 @@
+
+
+.wish {
+    position: relative;
+    text-align: center;
+    top: 15px;
+}
+
+
+.list {
+    display: flex;
+    width: 350px;
+    height: auto;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    position: relative;    
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0%); 
+    padding-bottom : 20px;  
+        
+}

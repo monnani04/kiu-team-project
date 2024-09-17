@@ -1,0 +1,163 @@
+.backBtn {
+    position: fixed;
+    left: 30px;
+    top: 25px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 90px;
+    margin-bottom: 200px;
+    width: 300px;
+}
+
+.areabox,
+.datebox,
+.numberbox {
+    border: none;
+    width: 300px;
+    height: 80px;
+    border-radius: 32px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    padding: 28px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: gray;
+    margin-bottom: 30px;
+    transition: height 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.search{
+    border: 1px solid gray;
+    height : 40px;
+    display : flex;
+    margin-top: 15px;  
+    border-radius: 15px;
+}
+
+.icon {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.input {
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.swiper {
+    margin-top: 20px;
+    height: 150px;
+    width: 250px;
+    /* border : 1px solid black; */
+}
+
+.swiperslide {
+    width: 120px;
+    flex-direction: column;
+
+}
+
+.swiperslide img {
+    border-radius: 20px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgb(230, 230, 230);
+
+}
+
+
+.datebox {
+    width: 300px;
+    /* height: 450px; */
+    border: 1px solid none;
+    border-radius: 32px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    /* padding: 0; */
+}
+
+.date {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cal {
+    position: relative;
+    top: 47px;
+    width: 300px;
+}
+
+.numberbox {}
+
+
+.information {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.options {
+    height: 150px;
+    position: relative;
+    top: 20px;
+    background-color: white;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.optionItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px; */
+}
+
+.optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50%;
+    /* text-align: center; */
+    /* line-height: 30px; */
+    font-weight: bold;
+}
+
+.optionCounterButton:disabled {
+    cursor: not-allowed;
+}
+
+.optionConterNumber{
+    width: 20px;
+    text-align: center;
+}

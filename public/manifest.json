@@ -1,0 +1,13 @@
+{
+    "short_name": "LAMAH App",
+    "name": "LAMAH",
+    "icons": [
+      {
+        "src": "LAMAH2.ico",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "landscape"
+  }

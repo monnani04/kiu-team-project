@@ -1,28 +1,88 @@
-import { TextField, Button, Paper } from "@mui/material";
+import axios from "axios";
+import { useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import style from "../../css/Login/Login.module.css";
 
 export default function Login() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  let params = {
+    username: String,
+    password: String,
+  };
+
+  function login(){
+    // e.preventDefault();
+    params.username = emailRef.current.value;
+    params.password = passwordRef.current.value;
+    // console.dir(params);
+    axios({
+      method: "post",
+      url: "/api/auth/login",
+      data: JSON.stringify(params),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        withCredentials: true,
+        crossDomain: true,
+        credentials: true,
+      },
+    })
+      .then((res) => {
+        console.dir(res);
+        navigate("/", {
+          state:{
+            nowPath: location.pathname
+          }
+        });
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }
+
   return (
     <>
       <div className={style.wrap}>
         <h1>LAMAH</h1>
-        
-        <input type="email" placeholder="E-mail을 입력하세요" />
 
-        <input type="password" placeholder="비밀번호를 입력하세요" />
+        <input ref={emailRef} type="email" placeholder="E-mail을 입력하세요" defaultValue="minjeong@gmail.com"
+        onKeyUp={()=>{
+          if (window.event.keyCode == 13) {
+ 
+            // 엔터키가 눌렸을 때 실행할 내용
+            login();
+       }
+        }
+        }/>
+
+        <input ref={passwordRef} type="password" placeholder="비밀번호를 입력하세요" defaultValue="123456"
+        onKeyUp={()=>{
+          if (window.event.keyCode == 13) {
+ 
+            // 엔터키가 눌렸을 때 실행할 내용
+            login();
+       }
+        }
+        }/>
 
         <div className={style.CheckboxWrap}>
-            <div>
-            <input type="checkbox" className={style.checkbox1}/>
+          <div>
+            <input type="checkbox" className={style.checkbox1} />
             E-mail 저장 &nbsp;&nbsp;
-            </div>
-            <div>
+          </div>
+          <div>
             <input type="checkbox" />
             자동 로그인
-            </div>
+          </div>
         </div>
 
-        <button className={style.button1}>LAMAH E-mail 로 그 인</button>
+        <button className={style.button1} onClick={login}>
+          LAMAH E-mail 로 그 인
+        </button>
         <button className={style.button2}>LAMAH 회 원 가 입</button>
 
         <div className={style.findBtnGroup}>
@@ -38,7 +98,6 @@ export default function Login() {
             <p>비밀번호 찾기</p>
           </div>
         </div>
-        
       </div>
     </>
   );
